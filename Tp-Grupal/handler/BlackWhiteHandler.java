@@ -8,15 +8,17 @@ public class BlackWhiteHandler extends Handler {
         super(succ);
     }
 
-    public boolean handleRequest(SheetPrint impresion) {
+    public boolean handleRequest(SheetPrint hoja, int i, int j) {
         boolean exito = false;
+        String colorBlanco = "⚪️";
 
-        if (impresion.getType() == "blackWhite") {
-            // Imprime en color
-            System.out.println("Se imprimio " + impresion.getName() + " en BLANCO Y NEGRO");
+        if (hoja.getPixel(i,j).equals("B") ) {
+            // setea el pixel en blanco y negro
+            setPixel(colorBlanco,i,j);
+            System.out.println("Se imprimio el pixel de" + hoja.getName() + " en ByN");
             exito = true;
         } else {
-            exito = super.getSuccesor().handleRequest(impresion);
+            exito = super.getSuccesor().handleRequest(hoja);
         }
 
         return exito;

@@ -23,5 +23,5 @@ public abstract class Handler {
         return true;
     }
 
-    public abstract boolean handleRequest(SheetPrint impresion);
+    public abstract boolean handleRequest(SheetPrint impresion,int i,int j);
 }

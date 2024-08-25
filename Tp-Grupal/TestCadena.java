@@ -13,7 +13,7 @@ public class TestCadena {
         ColorHandler color = new ColorHandler(black);
         HoloHandler holo = new HoloHandler(color);
 
-        executor.scheduleAtFixedRate(new Client("A", 8, holo), 5, 5, TimeUnit.SECONDS);
+        executor.scheduleAtFixedRate(new Client("A", holo, 10, 10), 5, 5, TimeUnit.SECONDS);
     }
 
 }
