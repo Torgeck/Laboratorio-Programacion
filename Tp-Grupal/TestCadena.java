@@ -8,12 +8,15 @@ import objects.Client;
 public class TestCadena {
 
     public static void main(String[] args) {
-        ScheduledExecutorService executor = new ScheduledThreadPoolExecutor(2);
+        System.out.println("Inicio del programa");
+        ScheduledExecutorService executor = new ScheduledThreadPoolExecutor(1);
         BlackWhiteHandler black = new BlackWhiteHandler(null);
         ColorHandler color = new ColorHandler(black);
         HoloHandler holo = new HoloHandler(color);
 
-        executor.scheduleAtFixedRate(new Client("A", 8, holo), 5, 5, TimeUnit.SECONDS);
+        executor.scheduleAtFixedRate(new Client("A", holo, 10, 10),1, 15, TimeUnit.SECONDS);
+        
+        //executor.shutdown();
     }
 
 }
