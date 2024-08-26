@@ -12,13 +12,13 @@ public class ColorHandler extends Handler {
         boolean exito = false;
         String colorRojo = "🔴";
 
-        if (hoja.getPixel(i,j).equals("C")) {
+        if (hoja.getPixel(i, j).equals("C")) {
             // setea el pixel en holografico
-            setPixel(colorRojo,i,j);
-            System.out.println("Se imprimio el pixel de" + hoja.getName() + " en COLOR");
+            hoja.setPixel(colorRojo, i, j);
+            System.out.println("Se imprimio el pixel de " + hoja.getName() + " en COLOR");
             exito = true;
         } else {
-            exito = super.getSuccesor().handleRequest(hoja);
+            exito = super.getSuccesor().handleRequest(hoja, i, j);
         }
 
         return exito;

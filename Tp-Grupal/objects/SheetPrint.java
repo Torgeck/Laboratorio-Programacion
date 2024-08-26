@@ -12,15 +12,14 @@ public class SheetPrint {
         this.name = name;
         this.sizeA = sizeA;
         this.sizeB = sizeB;
-        this.pixels = new String[sizeA][sizeB]; 
-        fillArray();
+        this.pixels = new String[sizeA][sizeB];
     }
 
-    public int getSizeA(){
+    public int getSizeA() {
         return this.sizeA;
     }
 
-    public int getSizeB(){
+    public int getSizeB() {
         return this.sizeB;
     }
 
@@ -58,34 +57,34 @@ public class SheetPrint {
         return tipo;
     }
 
-    private void fillArray(){
+    public void fillArray() {
 
-        for(int i=0; i< sizeA; i++){
+        for (int i = 0; i < sizeA; i++) {
 
-            for(int j=0; j < sizeB; j++){
+            for (int j = 0; j < sizeB; j++) {
                 this.pixels[i][j] = setRandomPixel();
             }
         }
     }
 
-    public String toString(){
+    public String toString() {
         StringBuffer buffer = new StringBuffer();
 
-        for(int i=0; i< sizeA; i++){
-            for(int j=0; j < sizeB; j++){
-                buffer.append( this.pixels[i][j] + " - " );
+        for (int i = 0; i < sizeA; i++) {
+            for (int j = 0; j < sizeB; j++) {
+                buffer.append(this.pixels[i][j] + " - ");
             }
             buffer.append("\n");
         }
         return buffer.toString();
     }
 
-    public String getPixel(int row, int col){
-        return this.pixels[i][j];
+    public String getPixel(int row, int col) {
+        return this.pixels[row][col];
     }
 
-    public boolean setPixel(String content, int row, int col){
-        this.pixels[i][j] = content;
+    public boolean setPixel(String content, int row, int col) {
+        this.pixels[row][col] = content;
         return true;
     }
 

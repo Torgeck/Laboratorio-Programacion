@@ -10,15 +10,15 @@ public class BlackWhiteHandler extends Handler {
 
     public boolean handleRequest(SheetPrint hoja, int i, int j) {
         boolean exito = false;
-        String colorBlanco = "⚪️";
+        String colorNegro = "⚫️";
 
-        if (hoja.getPixel(i,j).equals("B") ) {
+        if (hoja.getPixel(i, j).equals("B")) {
             // setea el pixel en blanco y negro
-            setPixel(colorBlanco,i,j);
-            System.out.println("Se imprimio el pixel de" + hoja.getName() + " en ByN");
+            hoja.setPixel(colorNegro, i, j);
+            System.out.println("Se imprimio el pixel de " + hoja.getName() + " en ByN");
             exito = true;
         } else {
-            exito = super.getSuccesor().handleRequest(hoja);
+            exito = super.getSuccesor().handleRequest(hoja, i, j);
         }
 
         return exito;
