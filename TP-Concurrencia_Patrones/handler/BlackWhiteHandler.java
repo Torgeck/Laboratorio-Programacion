@@ -11,6 +11,7 @@ public class BlackWhiteHandler extends Handler {
     public boolean handleRequest(SheetPrint hoja, int i, int j) {
         boolean exito = false;
         String colorNegro = "⚫️";
+        String colorBlanco = ""
 
         if (hoja.getPixel(i, j).equals("B")) {
             // setea el pixel en blanco y negro
