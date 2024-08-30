@@ -39,7 +39,7 @@ public class SheetPrint {
         Random random = new Random();
         String tipo;
 
-        switch (random.nextInt(3)) {
+        switch (random.nextInt(4)) {
             case 0:
                 tipo = "H";
                 break;
@@ -48,6 +48,9 @@ public class SheetPrint {
                 break;
             case 2:
                 tipo = "B";
+                break;
+            case 3:
+                tipo = "W";
                 break;
             default:
                 tipo = "R";
@@ -72,7 +75,11 @@ public class SheetPrint {
 
         for (int i = 0; i < sizeA; i++) {
             for (int j = 0; j < sizeB; j++) {
-                buffer.append(this.pixels[i][j] + " - ");
+                buffer.append(this.pixels[i][j]);
+
+                if (j + 1 != sizeB) {
+                    buffer.append(" - ");
+                }
             }
             buffer.append("\n");
         }
