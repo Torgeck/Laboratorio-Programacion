@@ -18,7 +18,7 @@ public class HoloHandler extends Handler {
             System.out.println("Se imprimio el pixel de " + hoja.getName() + " en HOLOGRAFICO");
             exito = true;
         } else {
-            exito = super.getSuccesor().handleRequest(hoja, i, j);
+            exito = this.getSuccesor().handleRequest(hoja, i, j);
         }
 
         return exito;
