@@ -26,10 +26,11 @@ public class Client implements Runnable {
     }
 
     public void run() {
-        System.out.println("Hora de inicio de tarea " + contadorTareas + ": " + LocalTime.now());
+        System.out.printf("Hora de inicio de tarea %d: %tT\n", contadorTareas, LocalTime.now());
         int ancho = this.sheet.getSizeA(), altura = this.sheet.getSizeB();
 
-        System.out.println("El cliente " + this.getName() + " comienza a imprimir");
+        System.out.println("Un nuevo cliente ha llegado");
+        System.out.printf("El cliente %s solicito una impresion\n",this.name);
         // inicializa los pixels aleatoriamente
         this.sheet.fillArray();
         // imprime estado inicial de la hoja
@@ -37,22 +38,21 @@ public class Client implements Runnable {
         for (int i = 0; i < ancho; i++) {
 
             for (int j = 0; j < altura; j++) {
-                System.out.println(this.name + " esta imprimiendo el pixel [" + i + "][" + j + "]");
+                System.out.printf("Se esta imprimiendo el pixel [%d][%d]\n",i,j);
                 try {
-                    // Thread.sleep(1000 * 5);
+                    Thread.sleep(500);
                     primerHandler.handleRequest(this.sheet, i, j);
                 } catch (Exception e) {
                     System.out.println("Se rompio todo");
                 }
-
             }
-
-            System.out.println("El cliente " + this.name + " termino de imprimir");
         }
         // imprime estado final de la hoja
+        System.out.println("La impresion ha finalizado");
         System.out.println(this.sheet.toString());
+        System.out.printf("El cliente %s se retiro de la imprenta\n",this.name);
 
-        System.out.println("Hora de finalizacion de tarea " + contadorTareas + ": " + LocalTime.now());
+        System.out.printf("Hora de finalizacion de tarea %d: %tT\n", contadorTareas, LocalTime.now());
         contadorTareas++;
     }
 
