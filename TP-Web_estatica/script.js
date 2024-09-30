@@ -34,7 +34,8 @@ let cortesDiv=document.getElementById("cortes");
 for(let i=1;i<=cantCortes;i++){
     elem=document.createElement("img");
     elem.src="./assets/imgs/cortes/corte"+i+".jpg";
-    elem.style.width="500px";
+    elem.style.width="400px";
+    //elem.style.height="500px";
     cortesDiv.appendChild(elem);
 }
 //Insertar cervezas
@@ -44,6 +45,6 @@ for(let i=1;i<=cantCervezas;i++){
     elem=document.createElement("img");
     elem.src="./assets/imgs/cervezas/kuruf"+i+".jpg";
     elem.style.maxWidth="100%"
-    elem.style.width="500px";
+    elem.style.width="400px";
     cervezas.appendChild(elem);
 }

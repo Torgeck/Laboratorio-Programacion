@@ -55,4 +55,8 @@ button:hover {
 }
 #cervezas{
   text-align: center;
+  font-family: Garamond
+}
+#mapa{
+  text-align: center;
 }
