@@ -59,3 +59,9 @@ button:hover {
   width: 50px;
   color: var(--white-color);
 }
+#cortes{
+  text-align: center;
+}
+#cervezas{
+  text-align: center;
+}
