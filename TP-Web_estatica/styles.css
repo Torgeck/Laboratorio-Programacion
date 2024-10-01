@@ -11,6 +11,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background-image: url("./assets/imgs/fondobarberia2.jpg");
 }
 
 header,
@@ -59,19 +60,19 @@ button:hover {
   width: 50px;
   color: var(--white-color);
 }
-#cortes{
+#cortes {
   text-align: center;
 }
-#cervezas{
+#cervezas {
   text-align: center;
-  font-family: Garamond
+  font-family: Garamond;
 }
-#mapa{
+#mapa {
   text-align: center;
 }
-.cervezas{
+.cervezas {
   width: 500px;
 }
-.cortes{
+.cortes {
   width: 500px;
 }
