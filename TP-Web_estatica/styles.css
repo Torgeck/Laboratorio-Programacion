@@ -81,3 +81,8 @@ button:hover {
   font-family:"tusker";
   src: url("tusker-grotesk-5700-bold.ttf") format("truetype");
 }
+h3,p,.promo{
+  font-family: "tusker";
+  color: white;
+  letter-spacing: 1px;
+}
