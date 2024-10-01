@@ -1,4 +1,4 @@
-function generarHeader() {
+export function generarHeader() {
   const header = document.querySelector("header");
   const logo = document.createElement("img");
   const boton = document.createElement("button");
@@ -10,9 +10,11 @@ function generarHeader() {
   boton.textContent = "Reserva tu turno";
   //boton.addEventListener("click", pedirTurno);
 
+  logo.addEventListener("click", () => (location.href = "./index.html"));
+
   header.append(logo, boton);
 }
-function generarFooter() {
+export function generarFooter() {
   const footer = document.querySelector("footer");
   const linkInsta = document.createElement("a");
   const linkTik = document.createElement("a");
@@ -92,4 +94,3 @@ for (let i = 1; i <= cantCervezas; i++) {
 }
 generarHeader();
 generarFooter();
-
