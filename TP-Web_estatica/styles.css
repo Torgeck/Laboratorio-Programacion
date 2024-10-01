@@ -1,3 +1,4 @@
+/* ---- Elementos ---- */
 :root {
   --white-color: #fefff1;
 }
@@ -21,17 +22,17 @@ footer {
   height: 150px;
   padding: 15px 50px;
   background-color: black;
+  gap: 30px;
 }
 
 footer {
   height: fit-content;
-  align-items: center;
   justify-content: center;
-  gap: 30px;
 }
 
-h1 {
+h1,h2 {
   color: var(--white-color);
+  
 }
 
 button {
@@ -51,6 +52,16 @@ button:hover {
   color: #111;
 }
 
+/* ---- Clases ---- */
+
+.cervezas {
+  width: 500px;
+}
+
+.cortes {
+  width: 500px;
+}
+
 .logo {
   height: 120px;
   margin-right: auto;
@@ -60,23 +71,61 @@ button:hover {
   width: 50px;
   color: var(--white-color);
 }
+
+.container {
+  display: flex;
+  align-self: center;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  gap: 50px;
+}
+
+.in_container{
+  display: flex;
+  backdrop-filter: blur(10px);
+  flex-direction: column;
+  width: 800px;
+  border-radius: 5%;
+  align-items: center;
+  align-content: center;
+}
+
+/* ---- Elementos Particulares ---- */
+
 #cortes {
   text-align: center;
 }
+
 #cervezas {
   text-align: center;
   font-family: Garamond;
 }
-#mapa {
-  text-align: center;
-}
-.cervezas {
-  width: 500px;
-}
-.cortes {
+
+#videoPresentacion{
   width: 500px;
 }
 
+#horarios{
+  margin: 20px 40px 20px 40px
+}
+
+#ubicacion{
+  margin-top: 20px;
+}
+
+#ubicacionMapa{
+  margin-top: 20px;
+  flex:auto;
+  text-align: center;
+}
+
+#ubicacionFotosLocal{
+  flex: auto;
+}
+
+#ubicacionTexto{
+  flex: auto;
+}
 @font-face {
   font-family:"tusker";
   src: url("tusker-grotesk-5700-bold.ttf") format("truetype");
