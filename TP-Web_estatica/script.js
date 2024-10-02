@@ -92,5 +92,6 @@ for (let i = 1; i <= cantCervezas; i++) {
   //elem.style.width = "500px";
   cervezas.appendChild(elem);
 }
+
 generarHeader();
 generarFooter();
