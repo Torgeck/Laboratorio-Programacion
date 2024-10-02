@@ -8,6 +8,11 @@
   margin: 0;
 }
 
+@font-face {
+  font-family: "tusker";
+  src: url("tusker-grotesk-5700-bold.ttf") format("truetype");
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -77,6 +82,7 @@ button:hover {
   align-self: center;
   margin-bottom: 40px;
   margin-top: 40px;
+  align-items: stretch;
   gap: 50px;
 }
 
@@ -87,8 +93,22 @@ button:hover {
   width: 800px;
   border-radius: 5%;
   align-items: center;
-  align-content: center;
+  justify-items: center;
+  flex: auto;
 }
+
+.botonera {
+  display: flex;
+  margin-right: auto;
+  gap: 50px;
+}
+
+a,h1,h2,h3,p,.promo {
+  font-family: "tusker";
+  color: white;
+  letter-spacing: 1px;
+}
+
 
 /* ---- Elementos Particulares ---- */
 
@@ -103,6 +123,11 @@ button:hover {
 
 #videoPresentacion {
   width: 500px;
+
+}
+
+#ubicacionTexto{
+  margin-top: 25px;
 }
 
 #horarios {
@@ -115,26 +140,8 @@ button:hover {
 
 #ubicacionMapa {
   margin-top: 20px;
-  flex: auto;
   text-align: center;
+  flex-grow: 1;
 }
 
-#ubicacionFotosLocal {
-  flex: auto;
-}
 
-#ubicacionTexto {
-  flex: auto;
-}
-@font-face {
-  font-family: "tusker";
-  src: url("tusker-grotesk-5700-bold.ttf") format("truetype");
-}
-h2,
-h3,
-p,
-.promo {
-  font-family: "tusker";
-  color: white;
-  letter-spacing: 1px;
-}
