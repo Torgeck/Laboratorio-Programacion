@@ -13,68 +13,59 @@
     <header> 
     </header>
 
-    <div class="container">
-      <!-- <img id="logoGrande" src="./assets/imgs/logo.png" alt="Logo de la barbeer" /> -->
-      <aside> 
-        <video id="videoPresentacion" src="./assets/presentación.mp4" autoplay muted loop></video>
-      </aside>
-      <div class="in_container">
-          <h1 id="ubicacionTexto">Nuestra ubicación</h1>
-          <!--Mapa-->
-          <iframe id="ubicacionMapa"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3102.48612161128!2d-68.05731602467962!3d-38.958566571710996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x960a3327c6ce9ba5%3A0xe5385147a5a50245!2sLa%20Barbeer!5e0!3m2!1ses!2sar!4v1727615336068!5m2!1ses!2sar"
-            width="750"
-            height="450"
-            style="border: 0"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
-          <div id="ubicacionFotosLocal">
-            <img id="fotoLocal_1" src="./assets/imgs/frente.jpg">
-            <img id="fotoLocal_2" src="./assets/imgs/dentro.jpg">
-          </div>
-      </div>
-    </div>
-
     <main>
-    <article>
-      <div class="container">
-        <div class="in_container">
-          <div id="horarios"></div>
-            <h1>Nuestros horarios</h1>
-            <p><b>Lunes a sábados de 10 a 21 hs</b></p>
+      <article>
+        <div class="container">
+          <!-- <img id="logoGrande" src="./assets/imgs/logo.png" alt="Logo de la barbeer" /> -->
+          <aside> 
+            <video id="videoPresentacion" src="./assets/presentación.mp4" autoplay muted loop></video>
+          </aside>
+  
+          <div class="in_container">
+            <div id="horarios">
+              <h1>Nuestros horarios</h1>
+              <p><b>Lunes a sábados de 10 a 21 hs</b></p>
+            </div>
+            <div id="promociones">
+              <h1>Promociones de la Semana</h1>
+              <!--Promociones-->
+              <ul id="listaPromociones">
+                <li>Promocion 1</li>
+                <li>Promocion 2</li>
+                <li>Promocion 3</li>
+                <li>Promocion 4</li>
+              </ul>
+              
+            </div>
+
+          </div>
+
+        </div>
+      </article>
+
+      <article>
+        <div class="container">
+          <div class="in_container">
+            <h1 id="ubicacionTexto">Nuestra ubicación</h1>
+            <!--Mapa-->
+            <iframe id="ubicacionMapa"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3102.48612161128!2d-68.05731602467962!3d-38.958566571710996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x960a3327c6ce9ba5%3A0xe5385147a5a50245!2sLa%20Barbeer!5e0!3m2!1ses!2sar!4v1727615336068!5m2!1ses!2sar"
+              width="750"
+              height="450"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+            <div id="ubicacionFotosLocal">
+              <img id="fotoLocal_1" src="./assets/imgs/frente.jpg">
+              <img id="fotoLocal_2" src="./assets/imgs/dentro.jpg">
+            </div>
           </div>
         </div>
-      </div>
-    </article>
-
-    <article>
-      <div class="container">
-        <!--Cortes-->
-        <div class="card" id="cortes">
-          <h3>Galeria de cortes</h3>
-          <p>Pasa a ver nuestros cortes re contra facheros</p>
-        </div>
-        <!--Cervezas-->
-        <div class="card" id="cervezas">
-          <h3>Catálogo Cervezas</h3>
-          <p>Las mejor seleccion de cervezas de la mano de Kürüf</p>
-        </div>
-      </div>
-    </article>
-
-    <article>
-      <div class="container">
-        <h3>Promociones</h3>
-        <!--Promociones-->
-        <div class="promo card">promocion 1</div>
-        <div class="promo card">promocion 2</div>
-        <div class="promo card">promocion 3</div>
-        <div class="promo card">promocion 4</div>
-      </div>
-    </article>
-  </main>
-    <footer> </footer>
+      </article>
+    </main>
+    <footer> 
+    </footer>
   </body>
 </html>
