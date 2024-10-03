@@ -82,18 +82,17 @@ button:hover {
 .container {
   display: flex;
   align-self: center;
+  margin: 40px 300px 40px 300px;
   align-items: stretch;
-  gap: 50px;
+  gap: 150px;
 }
 
 .in_container {
   display: flex;
-  backdrop-filter: blur(10px);
   flex-direction: column;
-  width: 800px;
+  backdrop-filter: blur(30px);
   border-radius: 5%;
   align-items: center;
-  justify-items: center;
   flex: auto;
 }
 
@@ -103,7 +102,16 @@ button:hover {
   gap: 50px;
 }
 
-o 
+a,
+h1,
+h2,
+h3,
+p,
+.promo {
+  font-family: "tusker";
+  color: white;
+  letter-spacing: 1px;
+}
 
 /* ---- Elementos Particulares ---- */
 
@@ -112,7 +120,8 @@ o
 }
 
 #videoPresentacion {
-  width: 500px;
+  width: 350px;
+  flex: auto;
 }
 
 #ubicacionTexto {
@@ -131,4 +140,14 @@ o
   margin-top: 20px;
   text-align: center;
   flex-grow: 1;
+}
+
+#promociones {
+  flex-grow: 2;
+  margin-top: 25px;
+}
+
+#listaPromociones li {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
