@@ -1,2 +1,4 @@
+
 generarHeader("../../");
 generarFooter("../../");
+

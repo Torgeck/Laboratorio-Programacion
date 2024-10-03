@@ -30,7 +30,6 @@ generarHeader("../../");
 generarFooter("../../");
 generarCervezas(mapCervezas);
 
-
 function agregarCerveza(nombre, descripcion) {
   mapCervezas.set(nombre, descripcion);
 }
