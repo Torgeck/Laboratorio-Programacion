@@ -1,6 +1,7 @@
 /* ---- Elementos ---- */
 :root {
   --white-color: #fefff1;
+  --offwhite-color: #bdbeae;
 }
 
 * {
@@ -17,7 +18,15 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  gap: 40px;
   background-image: url("./assets/imgs/fondobarberia2.jpg");
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 50px;
 }
 
 header,
@@ -61,18 +70,31 @@ button {
 
 button:hover {
   background: var(--white-color);
-  transition: 0.5s ease;
+  transition: 0.3s ease;
   color: #111;
 }
 
-/* ---- Clases ---- */
-.cortes {
-  width: 500px;
+video {
+  min-width: 150px;
+  max-width: 350px;
 }
 
+/* ---- Clases ---- */
 .logo {
   height: 120px;
   margin-right: auto;
+}
+
+.link {
+  color: var(--offwhite-color);
+  text-decoration: none;
+  font-size: 22px;
+}
+
+.link:hover {
+  color: var(--white-color);
+  font-size: 26px;
+  transition: 0.3s ease-in-out;
 }
 
 .socials {
@@ -82,61 +104,42 @@ button:hover {
 
 .container {
   display: flex;
-  align-self: center;
-  align-items: stretch;
-  gap: 150px;
+  justify-content: space-evenly;
+  gap: inherit;
 }
 
-.in_container {
-  display: flex;
+.vertical {
+  min-width: 560px;
+  padding: 40px;
+  flex-wrap: wrap;
   flex-direction: column;
   backdrop-filter: blur(30px);
   border-radius: 5%;
   align-items: center;
-  flex: auto;
+  justify-content: space-around;
+}
+
+.unico {
+  align-self: center;
 }
 
 .botonera {
   display: flex;
   margin-right: auto;
+  align-items: center;
   gap: 50px;
+}
+
+.mapa {
+  width: 750px;
+  height: 450px;
+  border-style: none;
 }
 
 /* ---- Elementos Particulares ---- */
 
-#cortes {
-  text-align: center;
-}
-
-#videoPresentacion {
-  width: 350px;
-  flex: auto;
-}
-
-#ubicacionTexto {
-  margin-top: 25px;
-}
-
-#horarios {
-  margin: 20px 40px 20px 40px;
-}
-
-#ubicacion {
-  margin-top: 20px;
-}
-
-#ubicacionMapa {
-  margin-top: 20px;
-  text-align: center;
-  flex-grow: 1;
-}
-
-#promociones {
-  flex-grow: 2;
-  margin-top: 25px;
-}
-
-#listaPromociones li {
+li {
   margin-top: 20px;
   margin-bottom: 20px;
+  list-style: none;
 }
