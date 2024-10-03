@@ -45,15 +45,4 @@ for (let i = 1; i <= cantCortes; i++) {
   //elem.style.width = "500px";
   cortesDiv.appendChild(elem);
 }
-//Insertar cervezas
-let cervezas = document.getElementById("cervezas");
-let cantCervezas = 7;
-for (let i = 1; i <= cantCervezas; i++) {
-  elem = document.createElement("img");
-  elem.classList.add("cervezas");
-  elem.src = "./assets/imgs/cervezas/kuruf" + i + ".jpg";
-  elem.style.maxWidth = "100%";
-  //elem.style.width = "500px";
-  cervezas.appendChild(elem);
-}
-  */
+*/
