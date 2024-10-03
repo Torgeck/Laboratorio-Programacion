@@ -1,4 +1,3 @@
-import { generarHeader, generarFooter } from "./utils.js";
 
 const direLogo = 'assets/imgs/logoCompleto.png';
 const direPagCervezas = 'pages/beers/beers.html';
