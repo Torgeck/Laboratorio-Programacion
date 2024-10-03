@@ -12,6 +12,7 @@ body {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  gap: 50px;
 }
 
 .filtro {

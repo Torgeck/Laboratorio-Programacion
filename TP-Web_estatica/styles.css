@@ -40,6 +40,7 @@ p,
 h1,
 h2,
 h3,
+li,
 .prom {
   letter-spacing: 1px;
   font-family: "Tusker";
@@ -82,7 +83,6 @@ button:hover {
 .container {
   display: flex;
   align-self: center;
-  margin: 40px 300px 40px 300px;
   align-items: stretch;
   gap: 150px;
 }
@@ -100,17 +100,6 @@ button:hover {
   display: flex;
   margin-right: auto;
   gap: 50px;
-}
-
-a,
-h1,
-h2,
-h3,
-p,
-.promo {
-  font-family: "tusker";
-  color: white;
-  letter-spacing: 1px;
 }
 
 /* ---- Elementos Particulares ---- */
