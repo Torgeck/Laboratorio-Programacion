@@ -1,22 +1,22 @@
-export function generarHeader(direccion) {
+export function generarHeader() {
   const header = document.querySelector("header");
   const logo = document.createElement("img");
   const boton = document.createElement("button");
   const seccionCervezas = document.createElement("a");
   const seccionCortes = document.createElement("a");
-  const cajaButonera = document.createElement("div");
+  const cajaButonera = document.createElement("nav");
 
-  logo.setAttribute("src", `${direccion}./assets/imgs/logoCompleto.png`);
+  logo.setAttribute("src", `/assets/imgs/logoCompleto.png`);
   logo.setAttribute("alt", "Logo de la barberia");
   logo.classList.add("logo");
 
   seccionCervezas.classList.add("link");
   seccionCervezas.textContent = "Nuestras Cervezas";
-  seccionCervezas.href = `${direccion}./pages/beers/beers.html`;
+  seccionCervezas.href = `/pages/beers/beers.html`;
 
   seccionCortes.classList.add("link");
   seccionCortes.textContent = "Galeria Cortes";
-  seccionCortes.href = `${direccion}./pages/haircuts/haircuts.html`;
+  seccionCortes.href = `/pages/haircuts/haircuts.html`;
 
   cajaButonera.classList.add("botonera");
 
@@ -25,7 +25,7 @@ export function generarHeader(direccion) {
 
   logo.addEventListener(
     "click",
-    () => (location.href = `${direccion}./index.html`)
+    () => (location.href = `/index.html`)
   );
 
   cajaButonera.append(seccionCervezas, seccionCortes);
@@ -39,14 +39,14 @@ export function generarFooter(direccion) {
   const insta = document.createElement("img");
   const tik = document.createElement("img");
 
-  insta.setAttribute("src", `${direccion}./assets/icons/instagram.svg`);
+  insta.setAttribute("src", `/assets/icons/instagram.svg`);
   insta.setAttribute("class", "socials");
   insta.setAttribute("alt", "Icono Instagram");
   linkInsta.setAttribute("href", "https://www.instagram.com/labar.beer/");
   linkInsta.setAttribute("target", "_blank");
   linkInsta.setAttribute("rel", "noopener noreferrer");
 
-  tik.setAttribute("src", `${direccion}./assets/icons/tiktok.svg`);
+  tik.setAttribute("src", `/assets/icons/tiktok.svg`);
   tik.setAttribute("class", "socials");
   tik.setAttribute("alt", "Icono TikTok");
   linkTik.setAttribute("href", "https://www.tiktok.com/@labar.beer");
@@ -70,10 +70,13 @@ export function generarCervezas(mapBeer) {
   let i = 1;
 
   for (let [key, value] of mapBeer) {
-    beer = document.createElement("div");
+    beer = document.createElement("figure");
     textContainer = document.createElement("div");
     beerImg = document.createElement("img");
     name = document.createElement("h2");
+
+    const figCaption=document.createElement("figcaption");
+
     descr = document.createElement("p");
 
     beer.classList.add("cerveza");
@@ -82,12 +85,17 @@ export function generarCervezas(mapBeer) {
     beerImg.classList.add("beerImg");
     textContainer.classList.add("container", "text", "justify-left");
     beerImg.src = `../.././assets/imgs/cervezas/kuruf${i}.jpg`;
+    beerImg.alt="Cerveza";
     name.textContent = key;
     descr.textContent = value;
 
-    textContainer.append(name, descr);
+    figCaption.append(descr)
+    textContainer.append(name, figCaption);
     beer.append(beerImg, textContainer);
     container.appendChild(beer);
     i++;
   }
+}
+export function generarCortes(){
+
 }

@@ -1,1 +1,4 @@
-import { generarHeader ,  generarFooter } from "./script.js"
+import { generarHeader, generarFooter, generarCervezas } from "../../utils.js";
+
+generarHeader();
+generarFooter();

@@ -26,11 +26,11 @@ const mapCervezas = new Map([
     "Cerveza rubia. equilibrada, orientada a la malta con un suave lupulado floral. abv %5 srm 4 ibu 18",
   ],
 ]);
-let i = 1;
 
-generarHeader("../../");
-generarFooter("../../");
+generarHeader();
+generarFooter();
 generarCervezas(mapCervezas);
+
 
 function agregarCerveza(nombre, descripcion) {
   mapCervezas.set(nombre, descripcion);
