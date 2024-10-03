@@ -7,12 +7,14 @@ export function generarHeader(direccion) {
   const cajaButonera = document.createElement("div");
 
   logo.setAttribute("src", `${direccion}./assets/imgs/logoCompleto.png`);
-  logo.setAttribute("class", "logo");
   logo.setAttribute("alt", "Logo de la barberia");
+  logo.classList.add("logo");
 
+  seccionCervezas.classList.add("link");
   seccionCervezas.textContent = "Nuestras Cervezas";
   seccionCervezas.href = `${direccion}./pages/beers/beers.html`;
 
+  seccionCortes.classList.add("link");
   seccionCortes.textContent = "Galeria Cortes";
   seccionCortes.href = `${direccion}./pages/haircuts/haircuts.html`;
 
