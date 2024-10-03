@@ -1,7 +1,15 @@
 import { generarHeader, generarFooter } from "./utils.js";
 
-generarHeader("");
-generarFooter("");
+const direLogo = 'assets/imgs/logoCompleto.png';
+const direPagCervezas = 'pages/beers/beers.html';
+const direPagCortes = 'pages/haircuts/haircuts.html';
+const direPagPrincipal = 'index.html';
+
+const direIconoTikTok = 'assets/icons/tiktok.svg'
+const direIconoInsta = 'assets/icons/instagram.svg';
+
+generarFooter(direIconoTikTok,direIconoInsta);
+generarHeader(direLogo,direPagCervezas,direPagCortes,direPagPrincipal);
 /*
 //Simular turnos cada 30 minutos en horario laboral para la semana anterior y la siguiente
 const ahora = new Date();

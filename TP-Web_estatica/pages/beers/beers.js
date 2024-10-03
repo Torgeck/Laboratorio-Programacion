@@ -27,8 +27,16 @@ const mapCervezas = new Map([
   ],
 ]);
 
-generarHeader();
-generarFooter();
+const direLogo = '../../assets/imgs/logoCompleto.png';
+const direPagCervezas = 'beers.html';
+const direPagCortes = '../haircuts/haircuts.html';
+const direPagPrincipal = '../../index.html';
+
+const direIconoTikTok = '../../assets/icons/tiktok.svg'
+const direIconoInsta = '../../assets/icons/instagram.svg';
+
+generarFooter(direIconoTikTok,direIconoInsta);
+generarHeader(direLogo,direPagCervezas,direPagCortes,direPagPrincipal);
 generarCervezas(mapCervezas);
 
 

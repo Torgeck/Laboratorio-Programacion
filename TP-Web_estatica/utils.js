@@ -1,4 +1,4 @@
-export function generarHeader() {
+export function generarHeader(direccionLogo, direccionPagCervezas, direccionPagCortes, direPagPrincipal) {
   const header = document.querySelector("header");
   const logo = document.createElement("img");
   const boton = document.createElement("button");
@@ -6,17 +6,19 @@ export function generarHeader() {
   const seccionCortes = document.createElement("a");
   const cajaButonera = document.createElement("nav");
 
-  logo.setAttribute("src", `/assets/imgs/logoCompleto.png`);
+  const basePath = window.location.origin + window.location.pathname;
+
+  logo.setAttribute("src", direccionLogo);
   logo.setAttribute("alt", "Logo de la barberia");
   logo.classList.add("logo");
 
   seccionCervezas.classList.add("link");
   seccionCervezas.textContent = "Nuestras Cervezas";
-  seccionCervezas.href = `/pages/beers/beers.html`;
+  seccionCervezas.href = direccionPagCervezas;
 
   seccionCortes.classList.add("link");
   seccionCortes.textContent = "Galeria Cortes";
-  seccionCortes.href = `/pages/haircuts/haircuts.html`;
+  seccionCortes.href = direccionPagCortes;
 
   cajaButonera.classList.add("botonera");
 
@@ -25,28 +27,28 @@ export function generarHeader() {
 
   logo.addEventListener(
     "click",
-    () => (location.href = `/index.html`)
+    () => (location.href = direPagPrincipal)
   );
 
   cajaButonera.append(seccionCervezas, seccionCortes);
   header.append(logo, cajaButonera, boton);
 }
 
-export function generarFooter(direccion) {
+export function generarFooter(direccionIconoTikTok, direcionIconoInsta) {
   const footer = document.querySelector("footer");
   const linkInsta = document.createElement("a");
   const linkTik = document.createElement("a");
   const insta = document.createElement("img");
   const tik = document.createElement("img");
 
-  insta.setAttribute("src", `/assets/icons/instagram.svg`);
+  insta.setAttribute("src", direcionIconoInsta);
   insta.setAttribute("class", "socials");
   insta.setAttribute("alt", "Icono Instagram");
   linkInsta.setAttribute("href", "https://www.instagram.com/labar.beer/");
   linkInsta.setAttribute("target", "_blank");
   linkInsta.setAttribute("rel", "noopener noreferrer");
 
-  tik.setAttribute("src", `/assets/icons/tiktok.svg`);
+  tik.setAttribute("src", direccionIconoTikTok);
   tik.setAttribute("class", "socials");
   tik.setAttribute("alt", "Icono TikTok");
   linkTik.setAttribute("href", "https://www.tiktok.com/@labar.beer");
