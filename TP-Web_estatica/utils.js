@@ -57,17 +57,35 @@ export function generarFooter(direccion) {
 }
 
 //Insertar cervezas
-export function generarCervezas() {
-  const container = document.getElementById("container");
-  const cervezas = document.createElement("div");
-  let elem;
-  let cantCervezas = 7;
+export function generarCervezas(mapBeer) {
+  const container = document.getElementById("catalogo");
+  let beer;
+  let imgWrapper;
+  let beerImg;
+  let name;
+  let descr;
+  let textContainer;
+  let i = 1;
 
-  for (let i = 1; i <= cantCervezas; i++) {
-    elem = document.createElement("img");
-    elem.classList.add("cervezas");
-    elem.src = `../.././assets/imgs/cervezas/kuruf${i}.jpg`;
-    cervezas.appendChild(elem);
+  for (let [key, value] of mapBeer) {
+    beer = document.createElement("div");
+    textContainer = document.createElement("div");
+    beerImg = document.createElement("img");
+    name = document.createElement("h2");
+    descr = document.createElement("p");
+
+    beer.classList.add("cerveza");
+    name.classList.add("titulo");
+    descr.classList.add("descripcion");
+    beerImg.classList.add("beerImg");
+    textContainer.classList.add("container", "text", "justify-left");
+    beerImg.src = `../.././assets/imgs/cervezas/kuruf${i}.jpg`;
+    name.textContent = key;
+    descr.textContent = value;
+
+    textContainer.append(name, descr);
+    beer.append(beerImg, textContainer);
+    container.appendChild(beer);
+    i++;
   }
-  container.appendChild(cervezas);
 }
