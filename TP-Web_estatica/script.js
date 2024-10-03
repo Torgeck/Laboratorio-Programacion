@@ -1,4 +1,3 @@
-import { generarHeader, generarFooter } from "./utils.js";
 
 generarHeader("");
 generarFooter("");

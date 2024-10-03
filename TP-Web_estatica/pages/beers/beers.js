@@ -1,4 +1,3 @@
-import { generarHeader, generarFooter, generarCervezas } from "../../utils.js";
 const mapCervezas = new Map([
   [
     "Cruzando el puente",
@@ -27,8 +26,8 @@ const mapCervezas = new Map([
   ],
 ]);
 
-generarHeader();
-generarFooter();
+generarHeader("../../");
+generarFooter("../../");
 generarCervezas(mapCervezas);
 
 
