@@ -27,8 +27,44 @@ const mapCervezas = new Map([
 ]);
 
 generarHeader("../../");
+generarCervezas();
 generarFooter("../../");
-generarCervezas(mapCervezas);
+
+function generarCervezas() {
+  const container = document.getElementById("catalogo");
+  let beer;
+  let figCaption;
+  let beerImg;
+  let name;
+  let descr;
+  let textContainer;
+  let i = 1;
+
+  for (let [key, value] of mapCervezas) {
+    beer = document.createElement("figure");
+    textContainer = document.createElement("div");
+    beerImg = document.createElement("img");
+    name = document.createElement("h2");
+    figCaption = document.createElement("figcaption");
+    descr = document.createElement("p");
+
+    beer.classList.add("cerveza");
+    name.classList.add("titulo");
+    descr.classList.add("descripcion");
+    beerImg.classList.add("beerImg");
+    textContainer.classList.add("container", "text", "justify-left");
+    beerImg.src = `../.././assets/imgs/cervezas/kuruf${i}.jpg`;
+    beerImg.alt = "Cerveza";
+    name.textContent = key;
+    descr.textContent = value;
+
+    figCaption.append(descr);
+    textContainer.append(name, figCaption);
+    beer.append(beerImg, textContainer);
+    container.appendChild(beer);
+    i++;
+  }
+}
 
 function agregarCerveza(nombre, descripcion) {
   mapCervezas.set(nombre, descripcion);

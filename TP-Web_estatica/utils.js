@@ -23,10 +23,7 @@ function generarHeader(dire) {
   boton.textContent = "Reserva tu turno";
   //boton.addEventListener("click", pedirTurno);
 
-  logo.addEventListener(
-    "click",
-    () => (location.href = `${dire}./index.html`)
-  );
+  logo.addEventListener("click", () => (location.href = `${dire}./index.html`));
 
   cajaButonera.append(seccionCervezas, seccionCortes);
   header.append(logo, cajaButonera, boton);
@@ -58,44 +55,4 @@ function generarFooter(dire) {
   footer.append(linkInsta, linkTik);
 }
 
-//Insertar cervezas
- function generarCervezas(mapBeer) {
-  const container = document.getElementById("catalogo");
-  let beer;
-  let imgWrapper;
-  let beerImg;
-  let name;
-  let descr;
-  let textContainer;
-  let i = 1;
-
-  for (let [key, value] of mapBeer) {
-    beer = document.createElement("figure");
-    textContainer = document.createElement("div");
-    beerImg = document.createElement("img");
-    name = document.createElement("h2");
-
-    const figCaption=document.createElement("figcaption");
-
-    descr = document.createElement("p");
-
-    beer.classList.add("cerveza");
-    name.classList.add("titulo");
-    descr.classList.add("descripcion");
-    beerImg.classList.add("beerImg");
-    textContainer.classList.add("container", "text", "justify-left");
-    beerImg.src = `../.././assets/imgs/cervezas/kuruf${i}.jpg`;
-    beerImg.alt="Cerveza";
-    name.textContent = key;
-    descr.textContent = value;
-
-    figCaption.append(descr)
-    textContainer.append(name, figCaption);
-    beer.append(beerImg, textContainer);
-    container.appendChild(beer);
-    i++;
-  }
-}
- function generarCortes(){
-
-}
+function generarCortes() {}
