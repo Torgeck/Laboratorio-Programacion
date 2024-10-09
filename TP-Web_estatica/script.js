@@ -42,39 +42,48 @@ function generarPromociones() {
 generarHeader("");
 generarPromociones();
 generarFooter("");
-/*function carousel(){
-  let tiempo = 2;//segundos
 
-  let container=document.getElementById("cardContainer");
-
-  let cantPromos=container.childElementCount;
-  let promos=container.children;
-  let elem;
-  for(let i=0;i< cantPromos;i++){
-    promos[i].style.visibility="hidden";
-  }
-
-  while(false){
-
-  }
-}*/
 let imagenActual=0 //Imagen del carousel de promos
+let transicion=false;
+let tiempoSeg=3;
 function avanzarPromo(){
-  let containerPromos=document.getElementById("cardContainer");
-  
-  containerPromos.removeChild(containerPromos.firstChild)
-  imagenActual=(imagenActual+1)%cards.length
-  containerPromos.append(cards[imagenActual]);
-  
+  if(!transicion){
+    let anterior=imagenActual;
+    transicion=true;
+    let containerPromos=document.getElementById("cardContainer");
+    imagenActual=(imagenActual+1)%cards.length
+    containerPromos.append(cards[imagenActual]);
+    cards[imagenActual].style.animation=`avanzarEntra ${tiempoSeg}s forwards`
+    cards[anterior].style.animation=`avanzar ${tiempoSeg}s forwards`
+    setTimeout(()=>{
+      cards[anterior].style.animation=""
+      cards[imagenActual].style.animation=""
+      containerPromos.removeChild(containerPromos.firstChild)
+      transicion=false;
+    },
+      tiempoSeg*1000);
+  }
 }
 function retrocederPromo(){
-  let containerPromos=document.getElementById("cardContainer");
-  containerPromos.removeChild(containerPromos.firstChild)
-  imagenActual=(imagenActual-1)
-  if(imagenActual==-1){
-    imagenActual=cards.length-1;
+  if(!transicion){
+    transicion=true
+    let anterior=imagenActual;
+    let containerPromos=document.getElementById("cardContainer");
+    imagenActual=(imagenActual-1)
+    if(imagenActual==-1){
+      imagenActual=cards.length-1;
+    }
+    containerPromos.insertBefore(cards[imagenActual],containerPromos.firstChild);
+    cards[anterior].style.animation=`retroceder ${tiempoSeg}s forwards`
+    cards[imagenActual].style.animation=`retrocederEntra ${tiempoSeg}s forwards`
+    setTimeout(()=>{
+      cards[imagenActual].style.animation=""
+      cards[anterior].style.animation=""
+      containerPromos.removeChild(containerPromos.children[1])
+      transicion=false;
+    },
+      tiempoSeg*1000);
   }
-  containerPromos.append(cards[imagenActual]);
 }
 //Timer que cambia las promos
-setInterval(avanzarPromo, 4000);
+setInterval(avanzarPromo, 3000);
