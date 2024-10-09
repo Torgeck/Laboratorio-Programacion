@@ -2,8 +2,11 @@ const mapPromociones = new Map([
   ["Happy Hour", "Todos los dias de 15hs a 17hs"],
   ["15% OFF", "En cervezas por Halloween"],
   ["20% OFF", "En cortes para monos"],
+  ["10% OFF", "El corte de Messi"],
+  ["2x1 en Kuruf", "Los sábados"]
 ]);
 
+let cards=[]
 function generarPromociones() {
   const containerPromo = document.getElementById("promociones");
   const containerCard = document.getElementById("cardContainer");
@@ -29,12 +32,49 @@ function generarPromociones() {
 
     textContainer.append(topText, botText);
     card.append(promoImg, textContainer);
-    containerCard.append(card);
+    cards.push(card)
     i++;
   }
+  containerCard.append(cards[0]);
   containerPromo.append(cardContainer);
 }
 
 generarHeader("");
 generarPromociones();
 generarFooter("");
+/*function carousel(){
+  let tiempo = 2;//segundos
+
+  let container=document.getElementById("cardContainer");
+
+  let cantPromos=container.childElementCount;
+  let promos=container.children;
+  let elem;
+  for(let i=0;i< cantPromos;i++){
+    promos[i].style.visibility="hidden";
+  }
+
+  while(false){
+
+  }
+}*/
+let imagenActual=0 //Imagen del carousel de promos
+function avanzarPromo(){
+  let containerPromos=document.getElementById("cardContainer");
+  
+  containerPromos.removeChild(containerPromos.firstChild)
+  imagenActual=(imagenActual+1)%cards.length
+  containerPromos.append(cards[imagenActual]);
+  
+}
+function retrocederPromo(){
+  let containerPromos=document.getElementById("cardContainer");
+  containerPromos.removeChild(containerPromos.firstChild)
+  imagenActual=(imagenActual-1)
+  if(imagenActual==-1){
+    imagenActual=cards.length-1;
+  }
+  containerPromos.append(cards[imagenActual]);
+}
+//Timer que cambia las promos
+setInterval(avanzarPromo, 4000);
