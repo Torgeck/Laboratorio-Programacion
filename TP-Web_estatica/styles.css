@@ -47,6 +47,7 @@ footer {
 
 a,
 p,
+.titulo,
 h1,
 h2,
 h3,
@@ -90,6 +91,10 @@ li {
 .logo {
   height: 120px;
   margin-right: auto;
+}
+
+.titulo{
+  font-size: 24px;
 }
 
 .link {
