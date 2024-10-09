@@ -9,7 +9,7 @@ const mapCortes = new Map([
     ],
     [
         "Mohicano", 
-        "Un estilo audaz y vanguardista.",
+        "Un corte bien jugado, ideal para los que quieren destacar y romper con lo clásico.",
     ],
     [
         "Mid Fade", 
