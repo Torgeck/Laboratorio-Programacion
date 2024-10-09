@@ -6,7 +6,6 @@ const mapPromociones = new Map([
   ["2x1 en Kuruf", "Los sábados"]
 ]);
 
-let cards=[] //Almacena en una variable global las cards de promociones
 function generarPromociones() {
   const containerPromo = document.getElementById("promociones");
   const containerCard = document.getElementById("cardContainer");
@@ -42,49 +41,3 @@ function generarPromociones() {
 generarHeader("");
 generarPromociones();
 generarFooter("");
-
-let imagenActual=0 //Imagen del carousel de promos
-let transicion=false;
-let tiempoSeg=3;
-function avanzarPromo(){
-  if(!transicion){
-    let anterior=imagenActual;
-    transicion=true;
-    let containerPromos=document.getElementById("cardContainer");
-    imagenActual=(imagenActual+1)%cards.length
-    containerPromos.append(cards[imagenActual]);
-    cards[imagenActual].style.animation=`avanzar ${tiempoSeg}s forwards`
-    cards[anterior].style.animation=`avanzar ${tiempoSeg}s forwards`
-    setTimeout(()=>{
-      cards[anterior].style.animation=""
-      cards[imagenActual].style.animation=""
-      containerPromos.removeChild(containerPromos.firstChild)
-      transicion=false;
-    },
-      tiempoSeg*1000);
-  }
-}
-function retrocederPromo(){
-  if(!transicion){
-    transicion=true
-    let anterior=imagenActual;
-    let containerPromos=document.getElementById("cardContainer");
-    imagenActual=(imagenActual-1)
-    if(imagenActual==-1){
-      imagenActual=cards.length-1;
-    }
-    containerPromos.insertBefore(cards[imagenActual],containerPromos.firstChild);
-    cards[anterior].style.animation=`retroceder ${tiempoSeg}s forwards`
-    cards[imagenActual].style.animation=`retroceder ${tiempoSeg}s forwards`
-    setTimeout(()=>{
-      cards[imagenActual].style.animation=""
-      cards[anterior].style.animation=""
-      containerPromos.removeChild(containerPromos.children[1])
-      transicion=false;
-    },
-      tiempoSeg*1000);
-  }
-}
-
-//Timer que cambia las promos
-setInterval(avanzarPromo, 6000);

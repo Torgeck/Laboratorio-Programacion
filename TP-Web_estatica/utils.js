@@ -54,5 +54,3 @@ function generarFooter(dire) {
   linkTik.appendChild(tik);
   footer.append(linkInsta, linkTik);
 }
-
-function generarCortes() {}
