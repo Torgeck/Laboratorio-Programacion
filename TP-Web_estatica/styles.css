@@ -149,6 +149,50 @@ video {
   text-align: center;
   color: var(--white-color);
   scroll-snap-align: start;
+  /*animation: avanzar 12s infinite;*/
+}
+@keyframes avanzar {
+  0% {
+    transform: translateX(0%);
+  }
+  80%{
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@keyframes retroceder {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@keyframes retroceder2 {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+#avanzar{
+  order: 2;
+  width: 15px;
+}
+#retroceder{
+  order: 0;
+  width: 15px;
+}
+#flechaRetroceder{
+  fill: white;
+}
+.direcciones{
+  height: 100%;
+  border: none;
+
 }
 
 .textContainer {
@@ -175,7 +219,7 @@ video {
 #cardContainer {
   display: flex;
   width: var(--card-width);
-  overflow-x: auto;
+  overflow-x: hidden;
   overflow-y: hidden;
   scroll-snap-type: x mandatory;
   gap: 8px;
