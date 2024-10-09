@@ -86,4 +86,4 @@ function retrocederPromo(){
   }
 }
 //Timer que cambia las promos
-setInterval(avanzarPromo, 4000);
+setInterval(avanzarPromo, 3000);
