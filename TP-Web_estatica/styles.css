@@ -27,12 +27,14 @@ main {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  flex-grow: 1;
   gap: 50px;
 }
 
 header,
 footer {
   display: flex;
+  flex-shrink: 0;
   align-items: center;
   height: 150px;
   padding: 15px 50px;
@@ -168,10 +170,9 @@ li {
   /*animation: avanzar 12s infinite;*/
 }
 
-.direcciones{
+.direcciones {
   height: 100%;
   border: none;
-
 }
 .promoImg {
   height: var(--card-width);
@@ -232,17 +233,16 @@ li {
   }
 }
 
-
 /* ---- Elementos Particulares ---- */
-#avanzar{
+#avanzar {
   order: 2;
   width: 15px;
 }
-#retroceder{
+#retroceder {
   order: 0;
   width: 15px;
 }
-#flechaRetroceder{
+#flechaRetroceder {
   fill: white;
 }
 
