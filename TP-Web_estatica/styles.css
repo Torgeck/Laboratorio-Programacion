@@ -129,7 +129,7 @@ li {
 }
 
 .vertical {
-  min-width: 560px;
+  width: min(560px, 70%);
   padding: 40px;
   flex-wrap: wrap;
   flex-direction: column;
@@ -155,7 +155,7 @@ li {
 }
 
 .mapa {
-  width: 750px;
+  width: min(750px, 100%);
   height: 450px;
   border-style: none;
 }
