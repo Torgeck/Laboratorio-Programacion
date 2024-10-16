@@ -129,6 +129,7 @@ li {
   position: absolute;
   color: var(--white-color);
   top: 20px;
+  left: auto;
   gap: 300px;
   width: var(--card-width);
 }
@@ -180,6 +181,7 @@ li {
   height: 100%;
   border: none;
 }
+
 .promoImg {
   height: var(--card-width);
   width: var(--card-width);
