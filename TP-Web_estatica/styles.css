@@ -95,7 +95,7 @@ li {
   margin-right: auto;
 }
 
-.titulo{
+.titulo {
   font-size: 24px;
 }
 
@@ -138,6 +138,7 @@ li {
   padding: 40px;
   flex-wrap: wrap;
   flex-direction: column;
+  flex-basis: fit-content;
   backdrop-filter: blur(30px);
   border-radius: 5%;
   align-items: center;
