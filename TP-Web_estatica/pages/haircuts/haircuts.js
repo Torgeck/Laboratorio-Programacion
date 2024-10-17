@@ -1,11 +1,21 @@
 const mapCortes = new Map([
-  ["Corte Clásico", "Un corte tradicional y elegante para cualquier ocasión."],
-  ["Fade", "Un degradado suave y moderno."],
+  [
+    "Corte Clásico", 
+    "Un corte tradicional y elegante para cualquier ocasión."
+  ],
+  [
+    "Fade", 
+    "Un degradado suave y moderno."
+
+  ],
   [
     "Mohicano",
     "Un corte bien jugado, ideal para los que quieren destacar y romper con lo clásico.",
   ],
-  ["Mid Fade", "Es un fade pero con un toque mas clasico."],
+  [
+    "Mid Fade", 
+    "Es un fade pero con un toque mas clasico."
+  ],
 ]);
 
 generarHeader("../../");
