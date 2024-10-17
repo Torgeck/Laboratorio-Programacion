@@ -10,11 +10,11 @@ function generarHeader(dire) {
   logo.setAttribute("alt", "Logo de la barberia");
   logo.classList.add("logo");
 
-  seccionCervezas.classList.add("link");
+  seccionCervezas.classList.add("link", "texto");
   seccionCervezas.textContent = "Nuestras Cervezas";
   seccionCervezas.href = `${dire}./pages/beers/beers.html`;
 
-  seccionCortes.classList.add("link");
+  seccionCortes.classList.add("link", "texto");
   seccionCortes.textContent = "Galeria Cortes";
   seccionCortes.href = `${dire}./pages/haircuts/haircuts.html`;
 

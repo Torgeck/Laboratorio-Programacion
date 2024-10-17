@@ -12,7 +12,6 @@ body {
   flex-wrap: wrap;
   align-items: center;
   gap: 50px;
-  padding-right: 50px;
 }
 
 .filtro {

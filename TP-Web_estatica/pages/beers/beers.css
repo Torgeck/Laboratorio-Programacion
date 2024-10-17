@@ -9,9 +9,7 @@ body {
 }
 
 .container {
-  flex-wrap: wrap;
   align-items: center;
-  gap: 50px;
 }
 
 .filtro {

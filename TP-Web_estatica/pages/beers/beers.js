@@ -49,8 +49,8 @@ function generarCervezas() {
     descr = document.createElement("p");
 
     beer.classList.add("cerveza");
-    name.classList.add("titulo");
-    descr.classList.add("descripcion");
+    name.classList.add("texto", "titulo");
+    descr.classList.add("texto", "descripcion");
     beerImg.classList.add("beerImg");
     textContainer.classList.add("container", "text", "justify-left");
     beerImg.src = `../.././assets/imgs/cervezas/kuruf${i}.jpg`;
