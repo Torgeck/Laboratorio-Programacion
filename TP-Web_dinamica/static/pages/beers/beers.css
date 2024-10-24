@@ -1,0 +1,44 @@
+@import url("../../styles.css");
+
+body {
+  gap: 40px;
+}
+
+.principal {
+  padding: 50px;
+}
+
+.container {
+  align-items: center;
+}
+
+.filtro {
+  backdrop-filter: blur(10px);
+}
+
+.text {
+  flex-direction: column;
+  gap: 5px;
+}
+
+.justify-left {
+  align-items: baseline;
+}
+
+.cerveza {
+  display: flex;
+  gap: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 20px;
+  max-height: 400px;
+  max-width: 600px;
+  min-width: 300px;
+}
+
+.beerImg {
+  min-width: 200px;
+  height: 200px;
+  border-radius: 20px;
+  object-fit: cover;
+  object-position: 0 90%;
+}
