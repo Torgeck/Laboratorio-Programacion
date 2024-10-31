@@ -12,7 +12,7 @@
 
 @font-face {
   font-family: "tusker";
-  src: url("tusker-grotesk-5700-bold.ttf") format("truetype");
+  src: url("../fonts/tusker-grotesk-5700-bold.ttf") format("truetype");
 }
 
 body {
@@ -20,7 +20,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
   gap: 40px;
-  background-image: url("./assets/imgs/fondobarberia2.jpg");
+  background-image: url("../assets/imgs/fondobarberia2.jpg");
 }
 
 main {
