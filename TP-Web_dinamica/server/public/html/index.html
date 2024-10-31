@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>💈 LA BARBEER 🍺</title>
+    <script src="utils.js"></script>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <header> </header>
+
+    <main>
+      <section class="container">
+        <video
+          id="videoPresentacion"
+          src="./assets/presentación.mp4"
+          autoplay
+          muted
+          loop
+        ></video>
+
+        <div class="container vertical">
+          <article>
+            <p class="texto titulo">Nuestros horarios</p>
+            <p class="texto">Lunes a sábados de 10 a 21 hs</p>
+          </article>
+
+          <article class="container vertical">
+            <p class="texto titulo">Nuestras Promociones</p>
+            <div id="promociones" class="carousel">
+              <div id="cardContainer"></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="container vertical unico">
+        <h1 id="ubicacionTexto" class="titulo texto">Nuestra ubicación</h1>
+        <!--Mapa-->
+        <iframe
+          id="ubicacionMapa"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3102.48612161128!2d-68.05731602467962!3d-38.958566571710996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x960a3327c6ce9ba5%3A0xe5385147a5a50245!2sLa%20Barbeer!5e0!3m2!1ses!2sar!4v1727615336068!5m2!1ses!2sar"
+          class="mapa"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        >
+        </iframe>
+
+        <div class="container unico">
+          <img class="fotoLocal" src="./assets/imgs/frente.jpg" />
+          <img class="fotoLocal" src="./assets/imgs/dentro.jpg" />
+        </div>
+      </section>
+    </main>
+
+    <footer> </footer>
+  </body>
+</html>
