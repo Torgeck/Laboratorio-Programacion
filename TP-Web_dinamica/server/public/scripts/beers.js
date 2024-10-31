@@ -26,9 +26,9 @@ const mapCervezas = new Map([
   ],
 ]);
 
-generarHeader("../../");
+generarHeader();
 generarCervezas();
-generarFooter("../../");
+generarFooter();
 
 function generarCervezas() {
   const container = document.getElementById("catalogo");
@@ -53,7 +53,7 @@ function generarCervezas() {
     descr.classList.add("texto", "descripcion");
     beerImg.classList.add("beerImg");
     textContainer.classList.add("container", "text", "justify-left");
-    beerImg.src = `../.././assets/imgs/cervezas/kuruf${i}.jpg`;
+    beerImg.src = `../assets/imgs/cervezas/kuruf${i}.jpg`;
     beerImg.alt = "Cerveza";
     name.textContent = key;
     descr.textContent = value;

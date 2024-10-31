@@ -12,4 +12,6 @@ router.get("/new", (req, res) => {
   res.send("Beer new FORM");
 });
 
+router.post("/new/:id", (req, res) => {});
+
 module.exports = router;

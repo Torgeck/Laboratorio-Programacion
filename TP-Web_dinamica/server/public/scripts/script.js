@@ -39,9 +39,9 @@ function generarPromociones() {
   containerPromo.append(cardContainer);
 }
 
-generarHeader("");
+generarHeader();
 generarPromociones();
-generarFooter("");
+generarFooter();
 
 let imagenActual = 0; //Imagen del carousel de promos
 let transicion = false;
