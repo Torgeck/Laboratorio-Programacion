@@ -1,18 +1,24 @@
 const express = require("express");
 const app = express();
-const port = 9000;
 const path = require("path");
+const PORT = 9000;
+const static = "../static"; // Ver si hay una mejor forma o re-organizar archivos
 
-app.use("/", express.static(path.join(__dirname, "../static")));
+app.use("/", express.static(path.join(__dirname, static)));
 
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "index.html"));
+app.get("^/$|/index(.html)?", (req, res) => {
+  res.sendFile(path.join(__dirname, static, "/index.html"));
 });
 
-app.use((req, res, next) => {
-  res.status(404).sendFile("404.html");
+const beerRouter = require("./routes/beer");
+
+app.use("/beers", beerRouter);
+
+app.get("/*", (req, res) => {
+  console.log("404");
+  res.status(404).sendFile(path.join(__dirname, static, "./404.html"));
 });
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+app.listen(PORT, () => {
+  console.log(`Example app listening on port ${PORT}`);
 });
