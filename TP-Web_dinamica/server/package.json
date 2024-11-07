@@ -10,7 +10,7 @@
   "description": "la barber",
   "main": "hola",
   "scripts": {
-    "devStart": "nodemon api.js"
+    "devStart": "nodemon server.js"
   },
   "author": "",
   "license": "ISC",
