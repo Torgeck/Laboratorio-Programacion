@@ -80,7 +80,9 @@ const getBeer = (req, res) => {
   }
 };
 
-const getRangeBeer = (req, res) => {};
+const getRangeBeer = (req, res) => {
+  // TODO ver como separar la query
+};
 
 module.exports = {
   getAllBeers,
