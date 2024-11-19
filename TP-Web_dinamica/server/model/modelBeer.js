@@ -4,8 +4,7 @@ const data = {
     this.beers = data;
   },
 };
-
-const createBeer = (name, description) => {
+const createNewBeer = (name, description) => {
   const newBeer = {
     id: data.beers[data.beers.length - 1].id + 1 || 1,
     name: name,
@@ -13,6 +12,7 @@ const createBeer = (name, description) => {
   };
 
   data.setBeers = [...data.beers, newBeer];
+  
   return true;
 };
 
@@ -42,3 +42,7 @@ const deleteBeer = (id) => {
 
   return resp;
 };
+module.exports={
+  data,
+  createNewBeer
+}

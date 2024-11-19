@@ -4,20 +4,21 @@ const notFound = (res, msg) => {
   res.status(400).json({ message: msg });
 };
 
-const getAllBeers = (req, res) => {
-  res.json(data.beers);
+ getAllBeers = (req, res) => {
+  res.json(modelBeer.data);
 };
 
-const createNewBeer = (req, res) => {
-  const name = req.body.name;
-  const desc = req.body.description;
-
+const createNewBeer = (body) => {
+  const name = body.name;
+  const desc = body.description;
+  let exito=true;
+  //Los campos name y description son obligatorios
   if (!name || !desc) {
-    notFound(res, "Nombre y descripcion no pueden ser vacios");
+    exito=false;
   } else {
-    modelBeer.createNewBeer(name, desc);
-    res.status(201);
+    exito= modelBeer.createNewBeer(name, desc);
   }
+  return exito;
 };
 
 const updateBeer = (req, res) => {
@@ -60,12 +61,13 @@ const getBeer = (req, res) => {
   }
 };
 
-const getRangeBeer = (req, res) => {
-  // TODO ver como separar la query
+const getRangeBeer = (inicio, fin) => {
+  let datos=modelBeer.data.beers;
+  return datos.slice(inicio,fin);
 };
 
 module.exports = {
-  getAllBeers,
+  getRangeBeer,
   createNewBeer,
   updateBeer,
   deleteBeer,
