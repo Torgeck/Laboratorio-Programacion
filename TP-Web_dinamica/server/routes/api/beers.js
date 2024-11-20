@@ -5,6 +5,11 @@ const beersController = require("../../controllers/beersController");
 router.use(express.json());
 router.use(express.urlencoded());
 
+
+const notFound = (res, msg) => {
+  res.status(400).json({ message: msg });
+};
+
 router
   .route("/")
   .get((req, res) => {
@@ -24,10 +29,11 @@ router
     if (correcto) {
       res.status(200).json({ exito: "Exito" });
     } else {
-      res.status(404).json({ error: "Nombre o descripcion vacios" });
+      notFound(res,"Nombre o descripcion vacíos")
     }
   })
-  .put(beersController.updateBeer)
+  .put(
+    beersController.updateBeer)
   .delete(beersController.deleteBeer);
 
 router.route("/:id").get((req, res) => {
@@ -35,10 +41,36 @@ router.route("/:id").get((req, res) => {
   let beer = beersController.getBeer(id);
 
   if (!beer) {
-    res.status(404).json({ error: `Cerveza con id ${id} no encontrada` });
+    notFound(res, `Cerveza con ID ${id} no encontrada`);
   } else {
     res.status(200).json(beer);
   }
-});
+})
+  .put((req, res) => {
+    const id = req.params.id
+
+    if (id != undefined) {
+      let exito = beersController.updateBeer(id, req.params.body);
+
+      if (exito) {
+        res.status(200);
+      } else {
+        notFound(res, `Cerveza con ID ${id} no encontrada`);
+      }
+    }
+  })
+  .delete((req, res) => {
+    const id = req.params.id
+
+    if (id != undefined) {
+      let exito = beersController.deleteBeer(id)
+      if (exito) {
+        res.status(200);
+      } else {
+        notFound(res, `Cerveza con ID ${id} no encontrada`);
+      }
+    }
+  }
+  );
 
 module.exports = router;
