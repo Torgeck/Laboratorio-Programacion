@@ -1,3 +1,4 @@
+import { writeFile } from "fs/promises";
 const z = require("zod");
 
 const data = {
@@ -12,7 +13,7 @@ const beerSchema = z.object({
   description: z.string().max(140).default("A homero le gusta"),
 });
 
-const positiveNum = z.number().int().positive().default(0);
+const positiveNum = z.coerce.number().int().positive().default(0);
 
 function validateNumber(object) {
   return positiveNum.safeParse(object);
@@ -22,7 +23,26 @@ function validateBeer(object) {
   return beerSchema.safeParse(object);
 }
 
-const createNewBeer = (name, description) => {
+async function writeJsonFile(newBeer) {
+  let exito = true;
+  try {
+    await writeFile(
+      "data/beers.json",
+      JSON.stringify(newBeer),
+      null,
+      4,
+      { flag: "a" },
+      "utf8"
+    );
+
+    data.setBeers = [...data.beers, newBeer];
+  } catch (err) {
+    exito = false;
+  }
+  return exito;
+}
+
+const createNewBeer = async (name, description) => {
   let resultado = validateBeer({ name: name, description: description });
   let exito = resultado.success;
   // Checkea que le hayan pasado strings
@@ -34,25 +54,16 @@ const createNewBeer = (name, description) => {
       description: description,
     };
 
-    fs.writeFile(
-      "data/beers.json",
-      JSON.stringify(jsonModificado, null, 4),
-      "utf8",
-      (err) => {
-        if (err) {
-          exito = false;
-        } else {
-          data.setBeers = [...data.beers, newBeer];
-        }
-      }
-    );
+    exito = await writeJsonFile(newBeer);
   }
-
-  return exito.await();
+  console.log("Se escribió el archivo: " + err);
+  return exito;
 };
 
 const findBeer = (id) => {
-  return data.beers.find((elem) => elem.id === parseInt(id, 10));
+  const idBeer = validateNumber(id);
+  const beer = data.beers.find((elem) => elem.id === idBeer.data);
+  return beer;
 };
 
 const updateBeer = (id) => {
@@ -83,17 +94,21 @@ const getRangeBeer = (inicio, fin) => {
   let fini = validateNumber(fin);
   let colBeers = [];
 
+  console.log(`${ini.success} , ${ini.data}`);
+
   if (ini.success && fini.success && ini.data !== fini.data) {
     if (ini.data > fini.data) {
-      colBeers = data.beers.slice(ini.data, fini.data);
+      colBeers = data.beers.slice(fini.data, inicio.data);
     } else {
-      colBeers = data.beers.slice(fini.data, ini.data);
+      colBeers = data.beers.slice(inicio.data, fini.data);
     }
   }
+
   return colBeers;
 };
 module.exports = {
   data,
+  getRangeBeer,
   createNewBeer,
   findBeer,
   updateBeer,

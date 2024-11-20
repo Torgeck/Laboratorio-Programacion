@@ -5,17 +5,11 @@ const notFound = (res, msg) => {
   res.status(400).json({ message: msg });
 };
 
-getAllBeers = (req, res) => {
-  console.log(`Entre a allBeer`);
-
-  res.json(modelBeer.data);
-};
-
 const createNewBeer = (body) => {
   const name = body.name;
   const desc = body.description;
   let exito = true;
-  console.log(`Entre a createBeer`);
+  console.log(`${name} , ${desc}`);
 
   //Los campos name y description son obligatorios
   if (!name || !desc) {
@@ -57,28 +51,12 @@ const deleteBeer = (req, res) => {
   }
 };
 
-const getBeer = (req, res) => {
-  const id = req.body.id;
-  const beer = modelBeer.findBeer(id);
-  console.log(`Entre a getBeer`);
-  if (!beer) {
-    notFound(res, `Cerveza con ID ${id} no encontrada`);
-  } else {
-    res.status(201);
-  }
+const getBeer = (id) => {
+  return modelBeer.findBeer(id);
 };
 
-const getRangeBeer = (req, res) => {
-  let col = modelBeer.getRangeBeer(req.query.inicio, req.query.fin);
-  if (!col.isEmpty()) {
-    res.status(201).json(col);
-  } else {
-    res
-      .status(400)
-      .send(
-        "Error: no se han encontrado cervezas con los parametros especificados"
-      );
-  }
+const getRangeBeer = (inicio, fin) => {
+  return modelBeer.getRangeBeer(inicio, fin);
 };
 
 module.exports = {
