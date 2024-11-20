@@ -1,12 +1,14 @@
 const express = require("express");
 const app = express();
 const path = require("path");
+const cors = require("cors");
 const PORT = 9000;
 
+app.use(cors());
 app.use(express.json());
 
 app.use("/", express.static(path.join(__dirname, "public")));
-app.use("/beers", require("./routes/api/beers"));
+app.use("/api/beers", require("./routes/api/beers"));
 
 //Sobraría con el uso del use de la línea 8?
 app.get("^/$|/index(.html)?", (req, res) => {

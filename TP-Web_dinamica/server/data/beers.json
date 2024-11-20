@@ -33,5 +33,10 @@
     "id": 7,
     "name": "Sueño Venice",
     "description": "Cerveza rubia. equilibrada, orientada a la malta con un suave lupulado floral. abv %5 srm 4 ibu 18"
+  },
+  {
+    "id": 8,
+    "name": "Quilmes",
+    "description": "Una birra refrezcante"
   }
 ]

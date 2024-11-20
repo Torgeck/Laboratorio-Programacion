@@ -2,43 +2,41 @@ const express = require("express");
 const router = express.Router();
 const beersController = require("../../controllers/beersController");
 
+router.use(express.json());
+router.use(express.urlencoded({ extended: false }));
+
 router
   .route("/")
-  .get((req, resp) => {
-    let inicio = req.query.inicio;
-    let fin = req.query.fin+1;
-    if(inicio<fin){
-      if (inicio == undefined) {
-        inicio = 0;
-      }
-      if (fin == undefined) {
-        fin = inicio + 5;
-      }
-  
-      //El corte incluye a fin
-      let colBeers = beersController.getRangeBeer(inicio, fin);
-      resp.status(200);
-      resp.json(colBeers);
-    }else{
-      resp.status(400)
-      resp.send("Error: Inicio es mayor que final")
+  .get((req, res) => {
+    let colBeer = beersController.getRangeBeer(req.query.inicio, req.query.fin);
+
+    if (colBeer.length > 0) {
+      res.status(200).json(colBeer);
+    } else {
+      res.status(404).json({ error: "ERROR" });
     }
   })
-  .post((req, resp) => {
-
-    let correcto=beersController.createNewBeer(req.body);
-    if(correcto){
-      resp.status(200);
-      resp.sendStatus(200);
-    }else{
-      notFound(res, "Nombre y descripcion no pueden ser vacios");
-      //resp.status(400);
-      //resp.sendStatus(400);
+  .post(async (req, res) => {
+    console.log(req.body);
+    let correcto = await beersController.createNewBeer(req.body);
+    if (correcto) {
+      res.status(200).json({ exito: "Exito" });
+    } else {
+      res.status(404).json({ error: "Nombre o descripcion vacios" });
     }
   })
   .put(beersController.updateBeer)
   .delete(beersController.deleteBeer);
 
-router.route("/:id").get(beersController.getBeer);
+router.route("/:id").get((req, res) => {
+  const id = req.params.id;
+  let beer = beersController.getBeer(id);
+
+  if (!beer) {
+    res.status(404).json({ error: `Cerveza con id ${id} no encontrada` });
+  } else {
+    res.status(200).json(beer);
+  }
+});
 
 module.exports = router;
