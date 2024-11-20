@@ -62,8 +62,10 @@ const findBeer = (id) => {
   return beer;
 };
 
-const updateBeer = (id) => {
-  const filteredArray = data.beers.filter((elem) => elem.id !== parseInt(id));
+const updateBeer = (beer, name, description) => {
+  beer.name = name;
+  beer.description = description;
+  const filteredArray = data.beers.filter((elem) => elem.id !== beer.id);
   const unsortedArray = [...filteredArray, beer];
 
   data.setBeers(
@@ -72,16 +74,16 @@ const updateBeer = (id) => {
   return true;
 };
 
-const deleteBeer = (id) => {
+const deleteBeer = (beer) => {
+  console.log(beer);
+  const id = beer.id;
   let resp = false;
-  if (!data.beers.find(id)) {
-    const filteredArray = data.beers.filter(
-      (elem) => elem.id !== parseInt(req.body.id)
-    );
-    data.setBeers([...filteredArray]);
+
+  if (data.beers.find((elem) => elem.id === id)) {
+    const filteredArray = data.beers.filter((elem) => elem.id !== parseInt(id));
+    data.beers = filteredArray;
     resp = true;
   }
-
   return resp;
 };
 

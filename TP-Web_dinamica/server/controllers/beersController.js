@@ -1,10 +1,6 @@
 const modelBeer = require("../model/modelBeer");
 const z = require("zod");
 
-const notFound = (res, msg) => {
-  res.status(400).json({ message: msg });
-};
-
 const createNewBeer = async (body) => {
   const name = body.name;
   const desc = body.description;
@@ -20,35 +16,35 @@ const createNewBeer = async (body) => {
   return exito;
 };
 
-const updateBeer = (req, res) => {
-  const id = req.body.id;
+const updateBeer = (id, datos) => {
+  //traer de memoria
   const beer = modelBeer.findBeer(id);
-  const beerName = req.body.name;
-  const beerDesc = req.body.description;
-  console.log(`Entre a updateBeer`);
-
+  let exito = false;
   if (!beer) {
     notFound(res, `Cerveza con ID ${id} no encontrada`);
   } else {
-    if (beerName) beer.name = beerName;
-    if (beerDesc) beer.description = beerDesc;
-
-    modelBeer.updateBeer(id);
-    res.status(201);
+    //extraer del body los datos
+    const beerName = datos.name;
+    const beerDesc = datos.description;
+    if (beerName != undefined && beerDesc != undefined) {
+      //guardar en disco
+      exito = modelBeer.updateBeer(beer, beerName, beerDesc);
+      exito = true;
+    }
   }
+  return exito;
 };
 
-const deleteBeer = (req, res) => {
-  const id = req.body.id;
+const deleteBeer = (id) => {
   const beer = modelBeer.findBeer(id);
-  console.log(`Entre a deleteBeer`);
-
+  let exito = true;
   if (!beer) {
-    notFound(res, `Cerveza con ID ${id} no encontrada`);
+    exito = false;
   } else {
-    modelBeer.deleteBeer(id);
-    res.status(201);
+    exito = modelBeer.deleteBeer(beer);
   }
+
+  return exito;
 };
 
 const getBeer = (id) => {
