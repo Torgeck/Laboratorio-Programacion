@@ -18,9 +18,9 @@ router
       res.status(404).json({ error: "ERROR" });
     }
   })
-  .post((req, res) => {
+  .post(async (req, res) => {
     console.log(req.body);
-    let correcto = beersController.createNewBeer(req.body);
+    let correcto = await beersController.createNewBeer(req.body);
     if (correcto) {
       res.status(200).json({ exito: "Exito" });
     } else {

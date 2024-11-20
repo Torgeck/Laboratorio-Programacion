@@ -1,5 +1,6 @@
-import { writeFile } from "fs/promises";
+const fs = require('fs/promises');
 const z = require("zod");
+//const fs = require('fs');
 
 const data = {
   beers: require("../data/beers.json"),
@@ -26,17 +27,13 @@ function validateBeer(object) {
 async function writeJsonFile(newBeer) {
   let exito = true;
   try {
-    await writeFile(
+    await fs.writeFile(
       "data/beers.json",
-      JSON.stringify(newBeer),
-      null,
-      4,
-      { flag: "a" },
-      "utf8"
-    );
-
+      JSON.stringify([...data.beers, newBeer], null,
+        4));
     data.setBeers = [...data.beers, newBeer];
   } catch (err) {
+    console.log(err)
     exito = false;
   }
   return exito;
@@ -56,7 +53,6 @@ const createNewBeer = async (name, description) => {
 
     exito = await writeJsonFile(newBeer);
   }
-  console.log("Se escribió el archivo: " + err);
   return exito;
 };
 

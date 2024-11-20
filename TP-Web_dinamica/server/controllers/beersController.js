@@ -5,7 +5,7 @@ const notFound = (res, msg) => {
   res.status(400).json({ message: msg });
 };
 
-const createNewBeer = (body) => {
+const createNewBeer = async (body) => {
   const name = body.name;
   const desc = body.description;
   let exito = true;
@@ -15,7 +15,7 @@ const createNewBeer = (body) => {
   if (!name || !desc) {
     exito = false;
   } else {
-    exito = modelBeer.createNewBeer(name, desc);
+    exito = await modelBeer.createNewBeer(name, desc);
   }
   return exito;
 };
