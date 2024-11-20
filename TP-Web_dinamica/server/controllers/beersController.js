@@ -1,7 +1,6 @@
 const modelBeer = require("../model/modelBeer");
 const z = require("zod");
 
-
 const createNewBeer = async (body) => {
   const name = body.name;
   const desc = body.description;
@@ -17,20 +16,20 @@ const createNewBeer = async (body) => {
   return exito;
 };
 
-const updateBeer = (id,datos) => {
+const updateBeer = (id, datos) => {
   //traer de memoria
-  const beer = modelBeer.existBeer(id);
-  let exito=false;
+  const beer = modelBeer.findBeer(id);
+  let exito = false;
   if (!beer) {
     notFound(res, `Cerveza con ID ${id} no encontrada`);
   } else {
     //extraer del body los datos
     const beerName = datos.name;
     const beerDesc = datos.description;
-    if(beerName!=undefined && beerDesc!=undefined){
+    if (beerName != undefined && beerDesc != undefined) {
       //guardar en disco
-      exito = modelBeer.updateBeer(beer,beerName,beerDesc);
-      exito=true;
+      exito = modelBeer.updateBeer(beer, beerName, beerDesc);
+      exito = true;
     }
   }
   return exito;
@@ -38,13 +37,14 @@ const updateBeer = (id,datos) => {
 
 const deleteBeer = (id) => {
   const beer = modelBeer.findBeer(id);
-  let exito=true;
-  if (beer === undefined) {
-    exito=false;
+  let exito = true;
+  if (!beer) {
+    exito = false;
   } else {
-    exito=modelBeer.deleteBeer(id);
+    exito = modelBeer.deleteBeer(beer);
   }
-  return exito
+
+  return exito;
 };
 
 const getBeer = (id) => {

@@ -1,4 +1,4 @@
-const fs = require('fs/promises');
+const fs = require("fs/promises");
 const z = require("zod");
 //const fs = require('fs');
 
@@ -29,11 +29,11 @@ async function writeJsonFile(newBeer) {
   try {
     await fs.writeFile(
       "data/beers.json",
-      JSON.stringify([...data.beers, newBeer], null,
-        4));
+      JSON.stringify([...data.beers, newBeer], null, 4)
+    );
     data.setBeers = [...data.beers, newBeer];
   } catch (err) {
-    console.log(err)
+    console.log(err);
     exito = false;
   }
   return exito;
@@ -62,10 +62,10 @@ const findBeer = (id) => {
   return beer;
 };
 
-const updateBeer = (id,name,description) => {
+const updateBeer = (beer, name, description) => {
   beer.name = name;
   beer.description = description;
-  const filteredArray = data.beers.filter((elem) => elem.id !== parseInt(id));
+  const filteredArray = data.beers.filter((elem) => elem.id !== beer.id);
   const unsortedArray = [...filteredArray, beer];
 
   data.setBeers(
@@ -74,13 +74,14 @@ const updateBeer = (id,name,description) => {
   return true;
 };
 
-const deleteBeer = (id) => {
+const deleteBeer = (beer) => {
+  console.log(beer);
+  const id = beer.id;
   let resp = false;
 
-  if (data.beers.find((elem)=>elem.id===id)) {
-    const filteredArray = data.beers.filter(
-      (elem) => elem.id !== parseInt(id)
-    );
+  if (data.beers.find((elem) => elem.id === id)) {
+    const filteredArray = data.beers.filter((elem) => elem.id !== parseInt(id));
+    data.beers = filteredArray;
     resp = true;
   }
   return resp;
