@@ -3,14 +3,12 @@ const router = express.Router();
 const beersController = require("../../controllers/beersController");
 
 router.use(express.json());
-router.use(express.urlencoded());
+router.use(express.urlencoded({ extended: false }));
 
 router
   .route("/")
   .get((req, res) => {
     let colBeer = beersController.getRangeBeer(req.query.inicio, req.query.fin);
-
-    console.log(colBeer);
 
     if (colBeer.length > 0) {
       res.status(200).json(colBeer);

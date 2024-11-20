@@ -4,6 +4,10 @@ body {
   gap: 40px;
 }
 
+.gif {
+  width: 250px;
+}
+
 .principal {
   padding: 50px;
 }
@@ -41,4 +45,14 @@ body {
   border-radius: 20px;
   object-fit: cover;
   object-position: 0 90%;
+}
+
+.loader {
+  display: flex;
+  align-items: center;
+  opacity: 0;
+}
+
+.show {
+  opacity: 1;
 }

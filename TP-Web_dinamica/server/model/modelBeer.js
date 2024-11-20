@@ -1,4 +1,4 @@
-const fs = require('fs/promises');
+const fs = require("fs/promises");
 const z = require("zod");
 //const fs = require('fs');
 
@@ -14,7 +14,7 @@ const beerSchema = z.object({
   description: z.string().max(140).default("A homero le gusta"),
 });
 
-const positiveNum = z.coerce.number().int().positive().default(0);
+const positiveNum = z.coerce.number().int().default(0);
 
 function validateNumber(object) {
   return positiveNum.safeParse(object);
@@ -29,11 +29,11 @@ async function writeJsonFile(newBeer) {
   try {
     await fs.writeFile(
       "data/beers.json",
-      JSON.stringify([...data.beers, newBeer], null,
-        4));
+      JSON.stringify([...data.beers, newBeer], null, 4)
+    );
     data.setBeers = [...data.beers, newBeer];
   } catch (err) {
-    console.log(err)
+    console.log(err);
     exito = false;
   }
   return exito;
@@ -85,18 +85,21 @@ const deleteBeer = (id) => {
   return resp;
 };
 
-const getRangeBeer = (inicio, fin) => {
-  let ini = validateNumber(inicio);
-  let fini = validateNumber(fin);
+const getRangeBeer = (start, end) => {
+  const dataLength = data.beers.length;
+  let firstIndex = validateNumber(start);
+  let lastIndex = validateNumber(end);
   let colBeers = [];
 
-  console.log(`${ini.success} , ${ini.data}`);
-
-  if (ini.success && fini.success && ini.data !== fini.data) {
-    if (ini.data > fini.data) {
-      colBeers = data.beers.slice(fini.data, inicio.data);
+  if (
+    firstIndex.success &&
+    lastIndex.success &&
+    firstIndex.data !== lastIndex.data
+  ) {
+    if (firstIndex.data > lastIndex.data) {
+      colBeers = data.beers.slice(lastIndex.data, firstIndex.data);
     } else {
-      colBeers = data.beers.slice(inicio.data, fini.data);
+      colBeers = data.beers.slice(firstIndex.data, lastIndex.data);
     }
   }
 
