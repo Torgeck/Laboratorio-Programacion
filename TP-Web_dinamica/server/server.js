@@ -15,6 +15,9 @@ app.get("/index", (req, res) => {
   res.sendFile(path.join(__dirname, "public/html/index.html"));
 });
 
+// API cervezas
+app.use("/api/beers", require("./routes/api/beers"));
+
 // Ruta para /beers
 app.get("/beers", (req, res) => {
   res.sendFile(path.join(__dirname, "public/html/beers.html"));
@@ -29,12 +32,6 @@ app.get("/haircuts", (req, res) => {
 app.all("/*", (req, res) => {
   res.status(404).sendFile(path.join(__dirname, "public/html/404.html"));
 });
-
-// API cervezas
-app.use("/api/beers", require("./routes/api/beers"));
-
-//app.use("/", express.static(path.join(__dirname, "public")));
-
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
