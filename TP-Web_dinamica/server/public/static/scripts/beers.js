@@ -11,7 +11,6 @@ const getCervezas = async (indiceInicio, indiceFin) => {
   if (!respuesta.ok) {
     throw new Error(`An error occurred: ${respuesta.status}`);
   }
-
   const data = await respuesta.json();
 
   return data;
@@ -39,8 +38,9 @@ const generarCartasCervezas = (colCervezas) => {
     descr.classList.add("texto", "descripcion");
     beerImg.classList.add("beerImg");
     textContainer.classList.add("container", "text", "justify-left");
-
     beerImg.src = `./static/assets/imgs/cervezas/kuruf${cerveza.id}.jpg`;
+
+    // Evento cuando no hay imagen en dicho path o cuando ocurre un error al cargar imagen
     beerImg.onerror = (event) => {
       event.target.src = `./static/assets/imgs/cervezas/default_beer.webp`;
       event.onerror = null;
@@ -73,7 +73,6 @@ function noHayCervezas() {
 }
 
 const cargarCartas = async (inicio, fin) => {
-  // Agregar loader
   mostrarLoader();
 
   setTimeout(async () => {
@@ -94,7 +93,6 @@ window.addEventListener(
   () => {
     const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
 
-    // Ver si se puede tener un total de cervezas para no cargar cuando no sea necesario
     if (scrollTop + clientHeight >= scrollHeight - 5 && hayCervezas) {
       indiceActual += items;
       finActual += items;
