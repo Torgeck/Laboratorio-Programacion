@@ -1,7 +1,7 @@
 let indiceActual = 0;
 let finActual = 6;
 let items = 6;
-let total = 0;
+let hayCervezas = true;
 const loader = document.querySelector(".loader");
 
 const getCervezas = async (indiceInicio, indiceFin) => {
@@ -39,8 +39,13 @@ const generarCartasCervezas = (colCervezas) => {
     descr.classList.add("texto", "descripcion");
     beerImg.classList.add("beerImg");
     textContainer.classList.add("container", "text", "justify-left");
-    // Ver como solucionar las imgs defaults
-    beerImg.src = `/static/assets/imgs/cervezas/kuruf${cerveza.id}.jpg`;
+
+    beerImg.src = `./static/assets/imgs/cervezas/kuruf${cerveza.id}.jpg`;
+    beerImg.onerror = (event) => {
+      event.target.src = `./static/assets/imgs/cervezas/default_beer.webp`;
+      event.onerror = null;
+    };
+
     beerImg.alt = "Cerveza";
     name.textContent = cerveza.name;
     descr.textContent = cerveza.description;
@@ -60,6 +65,13 @@ function ocultarLoader() {
   loader.classList.remove("show");
 }
 
+function noHayCervezas() {
+  const loaderChild = loader.firstElementChild;
+  hayCervezas = false;
+  loader.style.opacity = 1;
+  loaderChild.src = `./static/assets/imgs/no_beer.webp`;
+}
+
 const cargarCartas = async (inicio, fin) => {
   // Agregar loader
   mostrarLoader();
@@ -69,7 +81,8 @@ const cargarCartas = async (inicio, fin) => {
       const colCervezas = await getCervezas(inicio, fin);
       generarCartasCervezas(colCervezas);
     } catch (error) {
-      console.log(error.message);
+      noHayCervezas();
+      console.log("No hay mas cervezas >:(");
     } finally {
       ocultarLoader();
     }
@@ -82,7 +95,7 @@ window.addEventListener(
     const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
 
     // Ver si se puede tener un total de cervezas para no cargar cuando no sea necesario
-    if (scrollTop + clientHeight >= scrollHeight - 5) {
+    if (scrollTop + clientHeight >= scrollHeight - 5 && hayCervezas) {
       indiceActual += items;
       finActual += items;
       cargarCartas(indiceActual, finActual);

@@ -2,41 +2,251 @@
   {
     "id": 1,
     "name": "Cruzando el puente",
-    "description": "Chispeante, alegre, cítrica y refrescante. De notas a maracuyá, pomelo y ananá "
+    "description": "Chispeante, alegre, cítrica y refrescante. De notas a maracuyá, pomelo y ananá."
   },
   {
     "id": 2,
     "name": "Dolce Vita",
-    "description": "Cerveza rubia, aromática, ligera, seca y muy refrescante. Presencia de lúpulo floral - frutado. ibu 31 srm 3.5 abv 4,5%"
+    "description": "Cerveza rubia, aromática, ligera, seca y muy refrescante. Presencia de lúpulo floral-frutado. ibu 31 srm 3.5 abv 4.5%."
   },
   {
     "id": 3,
     "name": "Brava",
-    "description": "Cerveza roja. seca, fuerte y lupulada. Soporte de maltas de perfil tostado, bizcocho y caramelo. ibu 62 srm 12 abv 7%"
+    "description": "Cerveza roja, seca, fuerte y lupulada. Soporte de maltas de perfil tostado, bizcocho y caramelo. ibu 62 srm 12 abv 7%."
   },
   {
     "id": 4,
     "name": "Deporter",
-    "description": "Cerveza negra. fuerte y de carácter maltoso. Notas a caramelo, chocolate y toffee. ibu 32 srm 42 abv 6%"
+    "description": "Cerveza negra, fuerte y de carácter maltoso. Notas a caramelo, chocolate y toffee. ibu 32 srm 42 abv 6%."
   },
   {
     "id": 5,
     "name": "IPA Moderna",
-    "description": "Es como una IPA pero esta viene adicta al skibidi toilet"
+    "description": "Es como una IPA pero esta viene adicta al skibidi toilet."
   },
   {
     "id": 6,
     "name": "Del Limay",
-    "description": "Cerveza rubia. equilibrada, orientada a la malta con un suave lupulado floral. abv %5 srm 4 ibu 18"
+    "description": "Cerveza rubia, equilibrada, orientada a la malta con un suave lupulado floral. abv 5% srm 4 ibu 18."
   },
   {
     "id": 7,
     "name": "Sueño Venice",
-    "description": "Cerveza rubia. equilibrada, orientada a la malta con un suave lupulado floral. abv %5 srm 4 ibu 18"
+    "description": "Cerveza rubia, equilibrada, orientada a la malta con un suave lupulado floral. abv 5% srm 4 ibu 18."
   },
   {
     "id": 8,
     "name": "Quilmes",
-    "description": "Una birra refrezcante"
+    "description": "Una birra refrescante."
+  },
+  {
+    "id": 9,
+    "name": "Tropical Burst",
+    "description": "Cerveza dorada, afrutada y dulce con un toque de mango y piña. ibu 20 abv 4.8%."
+  },
+  {
+    "id": 10,
+    "name": "Amber Waves",
+    "description": "Cerveza ámbar, con notas de caramelo, malta dulce y un amargor moderado. ibu 35 srm 10 abv 5.5%."
+  },
+  {
+    "id": 11,
+    "name": "Stormy Night",
+    "description": "Cerveza stout cremosa con aromas a café y cacao. ibu 40 srm 50 abv 6.2%."
+  },
+  {
+    "id": 12,
+    "name": "Pura Vida",
+    "description": "Cerveza rubia refrescante con notas a limón y hierbas frescas. ibu 18 abv 4.3%."
+  },
+  {
+    "id": 13,
+    "name": "Sunset Ale",
+    "description": "Cerveza roja con toques de frutas rojas y un final maltoso. ibu 28 srm 15 abv 5.8%."
+  },
+  {
+    "id": 14,
+    "name": "Hazy Days",
+    "description": "Cerveza NEIPA turbia con intensas notas tropicales de lúpulo. ibu 45 srm 5 abv 6.7%."
+  },
+  {
+    "id": 15,
+    "name": "Dark Matter",
+    "description": "Cerveza porter robusta con sabor a cacao amargo y café espresso. ibu 30 srm 40 abv 5.9%."
+  },
+  {
+    "id": 16,
+    "name": "Honey Breeze",
+    "description": "Cerveza ligera con un toque de miel natural y cítricos. ibu 15 abv 4.5%."
+  },
+  {
+    "id": 17,
+    "name": "Hop Explosion",
+    "description": "Cerveza IPA con un perfil amargo extremo y notas de pino. ibu 80 abv 7.2%."
+  },
+  {
+    "id": 18,
+    "name": "Lager Del Sur",
+    "description": "Cerveza rubia clásica, ligera y fácil de beber. ibu 12 abv 4.6%."
+  },
+  {
+    "id": 19,
+    "name": "Otoño Dulce",
+    "description": "Cerveza de temporada con canela, nuez moscada y un toque dulce. ibu 25 abv 5.4%."
+  },
+  {
+    "id": 20,
+    "name": "Mystic Ale",
+    "description": "Cerveza de estilo belga con especias y aromas florales. ibu 20 abv 6.3%."
+  },
+  {
+    "id": 21,
+    "name": "Winter Frost",
+    "description": "Cerveza de invierno con jengibre, clavo y un final cálido. ibu 22 abv 6.5%."
+  },
+  {
+    "id": 22,
+    "name": "Citrus Blast",
+    "description": "Cerveza rubia con una explosión de cáscaras de naranja y limón. ibu 18 abv 4.7%."
+  },
+  {
+    "id": 23,
+    "name": "Iron Malt",
+    "description": "Cerveza fuerte de cuerpo pesado, con notas a malta tostada y regaliz. ibu 55 srm 18 abv 8.2%."
+  },
+  {
+    "id": 24,
+    "name": "Midnight Velvet",
+    "description": "Cerveza stout aterciopelada con sabor a vainilla y cacao. ibu 28 srm 48 abv 6.8%."
+  },
+  {
+    "id": 25,
+    "name": "Celtic Amber",
+    "description": "Cerveza ámbar de estilo irlandés con notas a caramelo y un amargor suave. ibu 25 abv 5.6%."
+  },
+  {
+    "id": 26,
+    "name": "Pale Horizon",
+    "description": "Cerveza pale ale equilibrada con lúpulo floral y un toque cítrico. ibu 38 abv 5.2%."
+  },
+  {
+    "id": 27,
+    "name": "Molino Dorado",
+    "description": "Cerveza de trigo ligera con notas a plátano y clavo. ibu 15 srm 6 abv 4.5%."
+  },
+  {
+    "id": 28,
+    "name": "Pacific Haze",
+    "description": "Cerveza NEIPA con un perfil afrutado y un toque tropical. ibu 50 abv 6.8%."
+  },
+  {
+    "id": 29,
+    "name": "La Brisa",
+    "description": "Cerveza refrescante con un toque de lima y cilantro. ibu 12 abv 4.2%."
+  },
+  {
+    "id": 30,
+    "name": "Ruby Dream",
+    "description": "Cerveza roja intensa con sabor a frutos secos y toffee. ibu 30 abv 5.9%."
+  },
+  {
+    "id": 31,
+    "name": "Alpine Chill",
+    "description": "Cerveza lager helada, con un perfil crujiente y limpio. ibu 14 abv 4.4%."
+  },
+  {
+    "id": 32,
+    "name": "Wild Berry Ale",
+    "description": "Cerveza infusionada con frutas del bosque. ibu 22 abv 5.0%."
+  },
+  {
+    "id": 33,
+    "name": "Espresso Porter",
+    "description": "Cerveza oscura con un perfil fuerte de café tostado. ibu 35 abv 6.0%."
+  },
+  {
+    "id": 34,
+    "name": "Golden Hour",
+    "description": "Cerveza dorada brillante con un balance entre dulzura y amargor. ibu 20 abv 5.4%."
+  },
+  {
+    "id": 35,
+    "name": "Neblina Azul",
+    "description": "Cerveza NEIPA turbia con notas cítricas y resinosas. ibu 45 abv 6.5%."
+  },
+  {
+    "id": 36,
+    "name": "Cocoa Bliss",
+    "description": "Cerveza negra con cacao puro y un toque de avellana. ibu 30 abv 5.7%."
+  },
+  {
+    "id": 37,
+    "name": "Lemon Zest",
+    "description": "Cerveza clara y cítrica con cáscara de limón y un final seco. ibu 10 abv 4.3%."
+  },
+  {
+    "id": 38,
+    "name": "Toasty Ale",
+    "description": "Cerveza ámbar con malta tostada y un toque de caramelo. ibu 25 abv 5.5%."
+  },
+  {
+    "id": 39,
+    "name": "Tropical Cyclone",
+    "description": "Cerveza IPA con un remolino de sabores a maracuyá y mango. ibu 60 abv 7.0%."
+  },
+  {
+    "id": 40,
+    "name": "Frosted Wheat",
+    "description": "Cerveza de trigo cremosa con un toque de vainilla. ibu 18 abv 4.8%."
+  },
+  {
+    "id": 41,
+    "name": "Autumn Ember",
+    "description": "Cerveza roja con especias otoñales y un final cálido. ibu 28 abv 5.6%."
+  },
+  {
+    "id": 42,
+    "name": "Black Currant Stout",
+    "description": "Cerveza negra infusionada con grosella negra. ibu 35 abv 6.3%."
+  },
+  {
+    "id": 43,
+    "name": "Cerveza del Faro",
+    "description": "Cerveza rubia clara, con notas marinas y un perfil fresco. ibu 15 abv 4.7%."
+  },
+  {
+    "id": 44,
+    "name": "Amber Lagoon",
+    "description": "Cerveza ámbar suave con un toque de miel. ibu 20 abv 5.0%."
+  },
+  {
+    "id": 45,
+    "name": "Night Owl",
+    "description": "Cerveza porter con un intenso sabor a chocolate y avena. ibu 32 abv 6.4%."
+  },
+  {
+    "id": 46,
+    "name": "Hoppy Trail",
+    "description": "Cerveza pale ale con un amargor marcado y un final floral. ibu 40 abv 5.8%."
+  },
+  {
+    "id": 47,
+    "name": "Sunlit Saison",
+    "description": "Cerveza saison ligera con un toque de especias y frutas. ibu 22 abv 5.3%."
+  },
+  {
+    "id": 48,
+    "name": "Mango IPA",
+    "description": "Cerveza IPA infusionada con mango fresco. ibu 55 abv 6.8%."
+  },
+  {
+    "id": 49,
+    "name": "Velvet Rose",
+    "description": "Cerveza de trigo con un delicado aroma a rosas y un final dulce. ibu 12 abv 4.5%."
+  },
+  {
+    "id": 50,
+    "name": "Golden Cascade",
+    "description": "Cerveza dorada con un perfil de lúpulo equilibrado y toques cítricos. ibu 25 abv 5.2%."
   }
 ]
