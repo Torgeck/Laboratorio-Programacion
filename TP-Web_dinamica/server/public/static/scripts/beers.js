@@ -39,8 +39,12 @@ const generarCartasCervezas = (colCervezas) => {
     descr.classList.add("texto", "descripcion");
     beerImg.classList.add("beerImg");
     textContainer.classList.add("container", "text", "justify-left");
-    // Ver como solucionar las imgs defaults
     beerImg.src = `/static/assets/imgs/cervezas/kuruf${cerveza.id}.webp`;
+    // Evento cuando no hay imagen en dicho path o cuando ocurre un error al cargar imagen
+    beerImg.onerror = (event) => {
+      event.target.src = `./static/assets/imgs/cervezas/default_beer.webp`;
+      event.onerror = null;
+    };
     beerImg.alt = "Cerveza";
     name.textContent = cerveza.name;
     descr.textContent = cerveza.description;
