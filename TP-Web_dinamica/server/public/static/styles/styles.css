@@ -45,6 +45,7 @@ footer {
 footer {
   height: fit-content;
   justify-content: center;
+  margin-top: auto;
 }
 
 .texto {

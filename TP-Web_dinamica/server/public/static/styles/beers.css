@@ -23,6 +23,7 @@ body {
 .text {
   flex-direction: column;
   gap: 5px;
+  padding: 20px;
 }
 
 .justify-left {
@@ -35,8 +36,7 @@ body {
   background-color: rgba(0, 0, 0, 0.7);
   border-radius: 20px;
   max-height: 400px;
-  max-width: 600px;
-  min-width: 300px;
+  width: 600px;
 }
 
 .beerImg {
