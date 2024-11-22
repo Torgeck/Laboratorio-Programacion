@@ -1,6 +1,5 @@
 const fs = require("fs/promises");
 const z = require("zod");
-//const fs = require('fs');
 
 const data = {
   beers: require("../data/beers.json"),

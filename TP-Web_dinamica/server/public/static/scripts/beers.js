@@ -40,7 +40,7 @@ const generarCartasCervezas = (colCervezas) => {
     beerImg.classList.add("beerImg");
     textContainer.classList.add("container", "text", "justify-left");
     // Ver como solucionar las imgs defaults
-    beerImg.src = `../assets/imgs/cervezas/kuruf${cerveza.id}.jpg`;
+    beerImg.src = `/static/assets/imgs/cervezas/kuruf${cerveza.id}.jpg`;
     beerImg.alt = "Cerveza";
     name.textContent = cerveza.name;
     descr.textContent = cerveza.description;

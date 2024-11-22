@@ -6,24 +6,24 @@ function generarHeader() {
   const seccionCortes = document.createElement("a");
   const cajaButonera = document.createElement("nav");
 
-  logo.setAttribute("src", `../assets/imgs/logoCompleto.png`);
+  logo.setAttribute("src", `/static/assets/imgs/logoCompleto.png`);
   logo.setAttribute("alt", "Logo de la barberia");
   logo.classList.add("logo");
 
   seccionCervezas.classList.add("link", "texto");
   seccionCervezas.textContent = "Nuestras Cervezas";
-  seccionCervezas.href = `../html/beers.html`;
+  seccionCervezas.href = `/beers`;
 
   seccionCortes.classList.add("link", "texto");
   seccionCortes.textContent = "Galeria Cortes";
-  seccionCortes.href = `../html/haircuts.html`;
+  seccionCortes.href = `/haircuts`;
 
   cajaButonera.classList.add("botonera");
 
   boton.textContent = "Reserva tu turno";
   //boton.addEventListener("click", pedirTurno);
 
-  logo.addEventListener("click", () => (location.href = `../html/index.html`));
+  logo.addEventListener("click", () => (location.href = `/index`));
 
   cajaButonera.append(seccionCervezas, seccionCortes);
   header.append(logo, cajaButonera, boton);
@@ -36,14 +36,14 @@ function generarFooter(dire) {
   const insta = document.createElement("img");
   const tik = document.createElement("img");
 
-  insta.setAttribute("src", `../assets/icons/instagram.svg`);
+  insta.setAttribute("src", `/static/assets/icons/instagram.svg`);
   insta.setAttribute("class", "socials");
   insta.setAttribute("alt", "Icono Instagram");
   linkInsta.setAttribute("href", "https://www.instagram.com/labar.beer/");
   linkInsta.setAttribute("target", "_blank");
   linkInsta.setAttribute("rel", "noopener noreferrer");
 
-  tik.setAttribute("src", `../assets/icons/tiktok.svg`);
+  tik.setAttribute("src", `/static/assets/icons/tiktok.svg`);
   tik.setAttribute("class", "socials");
   tik.setAttribute("alt", "Icono TikTok");
   linkTik.setAttribute("href", "https://www.tiktok.com/@labar.beer");

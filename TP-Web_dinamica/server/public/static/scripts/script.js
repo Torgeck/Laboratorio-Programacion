@@ -27,7 +27,7 @@ function generarPromociones() {
     promoImg.classList.add("promoImg");
     topText.textContent = key;
     botText.textContent = value;
-    promoImg.src = `../assets/imgs/promos/promo${i}.jpg`;
+    promoImg.src = `/static/assets/imgs/promos/promo${i}.jpg`;
     promoImg.alt = "Promocion";
 
     textContainer.append(topText, botText);

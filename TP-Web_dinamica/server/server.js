@@ -7,15 +7,28 @@ const PORT = 9000;
 app.use(cors());
 app.use(express.json());
 
-app.use("/", express.static(path.join(__dirname, "public")));
-app.use("/api/beers", require("./routes/api/beers"));
+// Para utilizar archivos estaticos
+app.use("/static", express.static(path.join(__dirname, "public/static")));
 
-//Sobraría con el uso del use de la línea 8?
-app.get("^/$|/index(.html)?", (req, res) => {
+// Ruta para /index
+app.get("/index", (req, res) => {
   res.sendFile(path.join(__dirname, "public/html/index.html"));
 });
 
-//Página de recurso no existente
+// API cervezas
+app.use("/api/beers", require("./routes/api/beers"));
+
+// Ruta para /beers
+app.get("/beers", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/html/beers.html"));
+});
+
+// Ruta para /haircuts
+app.get("/haircuts", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/html/haircuts.html"));
+})
+
+// Página de recurso no existente
 app.all("/*", (req, res) => {
   res.status(404).sendFile(path.join(__dirname, "public/html/404.html"));
 });

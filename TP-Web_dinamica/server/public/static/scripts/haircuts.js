@@ -35,7 +35,7 @@ function generarCortes() {
     descr.classList.add("texto", "descripcion");
     corteImg.classList.add("corteImg");
     textContainer.classList.add("container", "text", "justify-left");
-    corteImg.src = `../assets/imgs/cortes/corte${i}.jpg`;
+    corteImg.src = `/static/assets/imgs/cortes/corte${i}.jpg`;
     corteImg.alt = "Corte de Pelo";
     name.textContent = key;
     descr.textContent = value;
