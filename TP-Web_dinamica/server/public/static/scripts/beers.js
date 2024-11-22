@@ -2,6 +2,7 @@ let indiceActual = 0;
 let finActual = 6;
 let items = 6;
 let hayCervezas = true;
+let consultando = false;
 const loader = document.querySelector(".loader");
 
 const getCervezas = async (indiceInicio, indiceFin) => {
@@ -73,6 +74,7 @@ function noHayCervezas() {
 }
 
 const cargarCartas = async (inicio, fin) => {
+  consultando = true;
   mostrarLoader();
 
   setTimeout(async () => {
@@ -83,6 +85,7 @@ const cargarCartas = async (inicio, fin) => {
       noHayCervezas();
       console.log("No hay mas cervezas >:(");
     } finally {
+      consultando = false;
       ocultarLoader();
     }
   }, 1500);
@@ -93,7 +96,11 @@ window.addEventListener(
   () => {
     const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
 
-    if (scrollTop + clientHeight >= scrollHeight - 5 && hayCervezas) {
+    if (
+      !consultando &&
+      scrollTop + clientHeight >= scrollHeight - 5 &&
+      hayCervezas
+    ) {
       indiceActual += items;
       finActual += items;
       cargarCartas(indiceActual, finActual);
