@@ -6,7 +6,7 @@ function generarHeader() {
   const seccionCortes = document.createElement("a");
   const cajaButonera = document.createElement("nav");
 
-  logo.setAttribute("src", `/static/assets/imgs/logoCompleto.png`);
+  logo.setAttribute("src", `/static/assets/imgs/logoCompleto.webp`);
   logo.setAttribute("alt", "Logo de la barberia");
   logo.classList.add("logo");
 
